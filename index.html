@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Поисковая форма</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<div class="container" role="main">
+    <div class="row">
+        <form id="searchForm" class="form-horizontal" name="search-form" role="form">
+            <div class="panel panel-info">
+                <div class="panel-heading" id="panelHead">
+                    <h3>
+                        <a href="#" id="chevronUpHref" onclick="return false;">
+                            <span class="glyphicon glyphicon-chevron-up"> Уточняющие параметры</span>
+                        </a>
+                        <a href="#" id="chevronDownHref" class="hidden" onclick="return false;">
+                            <span class="glyphicon glyphicon-chevron-down"> Уточняющие параметры</span>
+                        </a>
+                    </h3>
+                </div>
+                <div class="panel-body panel-collapse" id="panelBody">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label required">Законы:</label>
+                        <div class="col-sm-10">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="law1" value="law1"> 44-ФЗ(94-ФЗ)
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="law2" value="law2"> 224-ФЗ
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label required">Номер закупки:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="purchaseNumber" class="form-control hint required" title="Введите полностью или часть номера закупки"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Поставщик:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="searchText" class="form-control hint" title="Введите полностью или часть полного или сокращенного наименования или ИНН поставщика"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Заказчик:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="searchText" class="form-control hint" title="Введите полностью или часть полного или сокращенного наименования или ИНН заказчика"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Адрес места поставки (выполнения работ, оказания услуг):</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="searchText" class="form-control hint" title="Введите полностью или часть наименования региона, населенного пункта"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Год заключения контракта:</label>
+                        <div class="col-sm-4">
+                            <input type="text" name="searchText" class="col-sm-3 form-control hint" title="от"/>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" name="searchText" class="col-sm-3 form-control hint" title="до"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Уровень организации Заказчика:</label>
+                        <div class="col-sm-10">
+                            <select class="form-control hint" title="Выберите уровень организации Заказчика">
+                                <option value="-1">Выберите уровень организации Заказчика</option>
+                                <option value="1">Федеральный уровень</option>
+                                <option value="2">Уровень субъекта РФ</option>
+                                <option value="3">Муниципальный уровень</option>
+                                <option value="4">Иное</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="additionalParams1" class="hidden">
+                        <p class="lead">Дополнительные параметры для закона 44-ФЗ(94-ФЗ)</p>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Введите текст</label>
+                            <div class="col-sm-10">
+                                <input name="searchText" class="form-control hint" type="text" placeholder="Введите текст"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Введите текст</label>
+                            <div class="col-sm-10">
+                                <input name="searchText" class="form-control hint" placeholder="Введите текст"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Выберите значение</label>
+                            <div class="col-sm-10">
+                                <select class="form-control hint">
+                                    <option value="-1">Выберите значение</option>
+                                    <option value="1">Один</option>
+                                    <option value="2">Два</option>
+                                    <option value="3">Три</option>
+                                    <option value="4">Четрые</option>
+                                    <option value="5">Пять</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="additionalParams2" class="hidden">
+                        <p class="lead">Дополнительные параметры для закона 223-ФЗ</p>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Введите текст</label>
+                            <div class="col-sm-10">
+                                <input name="searchText" class="form-control hint" type="text" placeholder="Введите текст"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pull-right">
+                        <button id="clearFormBtn" class="btn btn-default"><span class="glyphicon glyphicon-remove-circle"> Очистить</span></button>
+                        <button id="submitFormBtn" class="btn btn-primary"><span class="glyphicon glyphicon-search"> Найти</span></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <h3>Результаты поиска:</h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-12">
+                {EQ{EQ{EQ{E{QE{
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                {EQ{EQ{EQ{E{QE{
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                {EQ{EQ{EQ{E{QE{
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
