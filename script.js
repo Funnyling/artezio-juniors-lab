@@ -29,6 +29,7 @@
             hideElement(additionalParams2);
             form.reset();
             showHint();
+            return false;
         };
 
         var submitFormBtn = document.getElementById('submitFormBtn');
@@ -37,8 +38,8 @@
             if (!isNotEmptyRequiredFields(form) || (!law1.checked && !law2.checked)) {
                 showErrors(form);
             } else {
-                //todo удалять подсказки, если такие поля есть, чтобы их не сабмитать
-                //form.submit();
+                removeHintsFromInputs();
+                form.submit();
             }
             return false;
         };
@@ -104,6 +105,15 @@
             }
         }
         return true;
+    }
+
+    function removeHintsFromInputs() {
+        var inputsWithHints = document.querySelectorAll('input.hint');
+        for(var i = 0; i < inputsWithHints.length; i++) {
+            if (inputsWithHints[i].value === inputsWithHints[i].title) {
+                inputsWithHints[i].value = '';
+            }
+        }
     }
 
     function showHint() {
