@@ -23,6 +23,7 @@
         };
 
         var clearFormBtn = document.getElementById('clearFormBtn');
+
         clearFormBtn.onclick = function () {
             hideErrors(form);
             hideElement(additionalParams1);
@@ -88,27 +89,22 @@
         element.classList.add('hidden');
     }
 
-    //todo дополнить выводом ошибки на чекбоксах, если ниодин не выбран
     function showErrors(form) {
-        var requiredFields = form.querySelectorAll('input.required');
-        for(var i = 0; i < requiredFields.length; i++) {
-            requiredFields[i].parentElement.classList.add('has-error');
+        var commonDiv = form.querySelector('div#commonPart');
+        var requiredInputFields = commonDiv.querySelectorAll('input.required');
+        for(var i = 0; i < requiredInputFields.length; i++) {
+            requiredInputFields[i].parentElement.classList.add('has-error');
+            requiredInputFields[i].parentElement.nextElementSibling.classList.remove('hidden');
+        }
+
+        var law1 = document.getElementById('law1');
+        var law2 = document.getElementById('law2');
+
+        if (!law1.checked && !law2.checked) {
+            law1.parentElement.parentElement.nextElementSibling.classList.remove('hidden');
         }
     }
 
-    //todo дополнить выводом ошибки на чекбоксах, если ниодин не выбран
-    function validateNumericInputs(form) {
-        var reg = new RegExp('/^\d+$/');
-        var inputs = form.querySelectorAll('input.numeric');
-        for(var i = 0; i < inputs.length; i++) {
-            if (reg.test(inputs[i].value)) {
-
-            }
-
-        }
-    }
-
-    //todo переписать поиск на валидные значения
     function isNotEmptyRequiredFields(form) {
         var requiredInputs = form.querySelectorAll('input.required');
         for(var i = 0; i < requiredInputs.length; i++) {
@@ -156,9 +152,14 @@
     }
 
     function hideErrors(form) {
-        var requiredFields = form.querySelectorAll('input.required');
-        for(var i = 0; i < requiredFields.length; i++) {
-            requiredFields[i].parentElement.classList.remove('has-error');
+        var commonDiv = form.querySelector('div#commonPart');
+        var requiredInputFields = commonDiv.querySelectorAll('input.required');
+        for(var i = 0; i < requiredInputFields.length; i++) {
+            requiredInputFields[i].parentElement.classList.remove('has-error');
+            requiredInputFields[i].parentElement.nextElementSibling.classList.add('hidden');
         }
+
+        var law1 = document.getElementById('law1');
+        law1.parentElement.parentElement.nextElementSibling.classList.add('hidden');
     }
 })();
