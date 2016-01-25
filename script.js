@@ -40,7 +40,9 @@
                 showErrors(form);
             } else {
                 removeHintsFromInputs();
+                hideErrors(form);
                 form.submit();
+                //return false;
             }
             return false;
         };
@@ -89,22 +91,6 @@
         element.classList.add('hidden');
     }
 
-    function showErrors(form) {
-        var commonDiv = form.querySelector('div#commonPart');
-        var requiredInputFields = commonDiv.querySelectorAll('input.required');
-        for(var i = 0; i < requiredInputFields.length; i++) {
-            requiredInputFields[i].parentElement.classList.add('has-error');
-            requiredInputFields[i].parentElement.nextElementSibling.classList.remove('hidden');
-        }
-
-        var law1 = document.getElementById('law1');
-        var law2 = document.getElementById('law2');
-
-        if (!law1.checked && !law2.checked) {
-            law1.parentElement.parentElement.nextElementSibling.classList.remove('hidden');
-        }
-    }
-
     function isNotEmptyRequiredFields(form) {
         var requiredInputs = form.querySelectorAll('input.required');
         for(var i = 0; i < requiredInputs.length; i++) {
@@ -151,6 +137,31 @@
         };
     }
 
+    function showErrors(form) {
+        var commonDiv = form.querySelector('div#commonPart');
+        var requiredInputFields = commonDiv.querySelectorAll('input.required');
+        for(var i = 0; i < requiredInputFields.length; i++) {
+            requiredInputFields[i].parentElement.classList.add('has-error');
+            requiredInputFields[i].parentElement.nextElementSibling.classList.remove('hidden');
+        }
+
+        var law1 = document.getElementById('law1');
+        var law2 = document.getElementById('law2');
+
+        if (!law1.checked && !law2.checked) {
+            law1.parentElement.parentElement.nextElementSibling.classList.remove('hidden');
+        }
+
+        if (law2.checked) {
+            var additionalParamsDiv = form.querySelector('div#additionalParams2');
+            requiredInputFields = additionalParamsDiv.querySelectorAll('input.required');
+            for(i = 0; i < requiredInputFields.length; i++) {
+                requiredInputFields[i].parentElement.classList.add('has-error');
+                requiredInputFields[i].parentElement.nextElementSibling.classList.remove('hidden');
+            }
+        }
+    }
+
     function hideErrors(form) {
         var commonDiv = form.querySelector('div#commonPart');
         var requiredInputFields = commonDiv.querySelectorAll('input.required');
@@ -160,6 +171,16 @@
         }
 
         var law1 = document.getElementById('law1');
+        var law2 = document.getElementById('law2');
         law1.parentElement.parentElement.nextElementSibling.classList.add('hidden');
+
+        if (law2.checked) {
+            var additionalParamsDiv = form.querySelector('div#additionalParams2');
+            requiredInputFields = additionalParamsDiv.querySelectorAll('input.required');
+            for(i = 0; i < requiredInputFields.length; i++) {
+                requiredInputFields[i].parentElement.classList.remove('has-error');
+                requiredInputFields[i].parentElement.nextElementSibling.classList.add('hidden');
+            }
+        }
     }
 })();

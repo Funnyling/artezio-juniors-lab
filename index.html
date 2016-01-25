@@ -44,7 +44,7 @@
                                 <input type="text" name="purchaseNumber" class="form-control hint required" title="Введите полностью или часть номера закупки"/>
                             </div>
                             <div class="col-sm-10 col-sm-offset-2 error hidden">
-                                <label class="text-danger">Номер закупки не может быть пустым</label>
+                                <label class="text-danger">Обязательное поле не может быть пустым</label>
                             </div>
                         </div>
                         <div class="form-group">
@@ -132,9 +132,12 @@
                     <div id="additionalParams2" class="hidden">
                         <p class="lead">Дополнительные параметры для закона 223-ФЗ</p>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">Организация, разместившая запрос цен:</label>
+                            <label class="col-sm-2 control-label required">Организация, разместившая запрос цен:</label>
                             <div class="col-sm-10">
-                                <input name="placedOrganization" class="form-control hint" type="text" placeholder="Введите полностью или часть полного или сокращённого наименования, ИНН организации"/>
+                                <input name="placedOrganization" class="form-control hint required" type="text" placeholder="Введите полностью или часть полного или сокращённого наименования, ИНН организации"/>
+                            </div>
+                            <div class="col-sm-10 col-sm-offset-2 error hidden">
+                                <label class="text-danger">Обязательное поле не может быть пустым</label>
                             </div>
                         </div>
                     </div>
