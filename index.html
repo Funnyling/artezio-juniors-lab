@@ -33,11 +33,17 @@
                                 <input type="checkbox" name="laws" id="law2" value="law2"> 224-ФЗ
                             </label>
                         </div>
+                        <div class="col-sm-10 col-sm-offset-2 error hidden">
+                            <label class="text-danger">Должен быть выбра хотя бы один закон</label>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label required">Номер закупки:</label>
                         <div class="col-sm-10">
                             <input type="text" name="purchaseNumber" class="form-control hint required" title="Введите полностью или часть номера закупки"/>
+                        </div>
+                        <div class="col-sm-10 col-sm-offset-2 error">
+                            <label class="text-danger">Номер закупки не может быть пустым</label>
                         </div>
                     </div>
                     <div class="form-group">
@@ -67,6 +73,9 @@
                         <div class="col-sm-4">
                             <input type="text" name="endYear" class="col-sm-3 form-control hint numeric" title="до"/>
                         </div>
+                        <!--<div class="col-sm-10 col-sm-offset-2 error">-->
+                            <!--<label class="text-danger">Года должны состоять только из цифр</label>-->
+                        <!--</div>-->
                     </div>
 
                     <div class="form-group">
@@ -91,6 +100,9 @@
                             <div class="col-sm-4">
                                 <input type="text" name="maxPrice" class="col-sm-3 form-control hint numeric" title="до"/>
                             </div>
+                            <!--<div class="col-sm-10 col-sm-offset-2 error">-->
+                                <!--<label class="text-danger">Цена контракта должны состоять только из цифр</label>-->
+                            <!--</div>-->
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Тип валюты:</label>

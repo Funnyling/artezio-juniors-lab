@@ -96,6 +96,18 @@
         }
     }
 
+    //todo дополнить выводом ошибки на чекбоксах, если ниодин не выбран
+    function validateNumericInputs(form) {
+        var reg = new RegExp('/^\d+$/');
+        var inputs = form.querySelectorAll('input.numeric');
+        for(var i = 0; i < inputs.length; i++) {
+            if (reg.test(inputs[i].value)) {
+
+            }
+
+        }
+    }
+
     //todo переписать поиск на валидные значения
     function isNotEmptyRequiredFields(form) {
         var requiredInputs = form.querySelectorAll('input.required');
