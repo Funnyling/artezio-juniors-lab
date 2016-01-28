@@ -9,6 +9,8 @@
         var additionalParamsForLaw2 = document.getElementById('additionalParams2');
         var clearFormBtn = document.getElementById('clearFormBtn');
         var submitFormBtn = document.getElementById('submitFormBtn');
+        var commonDiv = document.getElementById('commonPart');
+        var requiredInputFields = commonDiv.querySelectorAll('input.required');
 
         panelHead.onclick = function () {
             var chevronUp = panelHead.querySelector('a#chevronUpHref');
@@ -59,6 +61,27 @@
         };
 
         showHint();
+
+        function showErrors() {
+            for(var i = 0; i < requiredInputFields.length; i++) {
+                if (requiredInputFields[i].value === requiredInputFields[i].title || requiredInputFields[i].value == '') {
+                    requiredInputFields[i].parentElement.classList.add('has-error');
+                    requiredInputFields[i].parentElement.nextElementSibling.classList.remove('hidden');
+                }
+            }
+
+            if (!law1.checked && !law2.checked) {
+                law1.parentElement.parentElement.nextElementSibling.classList.remove('hidden');
+            }
+        }
+
+        function hideAllErrors() {
+            for(var i = 0; i < requiredInputFields.length; i++) {
+                requiredInputFields[i].parentElement.classList.remove('has-error');
+                requiredInputFields[i].parentElement.nextElementSibling.classList.add('hidden');
+            }
+            law1.parentElement.parentElement.nextElementSibling.classList.add('hidden');
+        }
     });
 
     function showAdditionalParamsForLaw(law, anotherLaw, additionalParamsForLaw, additionalParamsForAnotherLaw) {
@@ -136,35 +159,5 @@
                 inputsWithHints[i].value = '';
             }
         }
-    }
-
-    function showErrors() {
-        var commonDiv = document.getElementById('commonPart');
-        var requiredInputFields = commonDiv.querySelectorAll('input.required');
-        for(var i = 0; i < requiredInputFields.length; i++) {
-            if (requiredInputFields[i].value === requiredInputFields[i].title || requiredInputFields[i].value == '') {
-                requiredInputFields[i].parentElement.classList.add('has-error');
-                requiredInputFields[i].parentElement.nextElementSibling.classList.remove('hidden');
-            }
-        }
-
-        var law1 = document.getElementById('law1');
-        var law2 = document.getElementById('law2');
-
-        if (!law1.checked && !law2.checked) {
-            law1.parentElement.parentElement.nextElementSibling.classList.remove('hidden');
-        }
-    }
-
-    function hideAllErrors() {
-        var commonDiv = document.getElementById('commonPart');
-        var requiredInputFields = commonDiv.querySelectorAll('input.required');
-        for(var i = 0; i < requiredInputFields.length; i++) {
-            requiredInputFields[i].parentElement.classList.remove('has-error');
-            requiredInputFields[i].parentElement.nextElementSibling.classList.add('hidden');
-        }
-
-        var law1 = document.getElementById('law1');
-        law1.parentElement.parentElement.nextElementSibling.classList.add('hidden');
     }
 })();
