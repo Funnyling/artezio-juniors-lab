@@ -46,8 +46,8 @@
             } else {
                 removeHintsFromInputs();
                 hideAllErrors();
-                form.submit();
-                //return false;
+                //form.submit();
+                return false;
             }
             return false;
         };
