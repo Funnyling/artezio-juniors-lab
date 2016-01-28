@@ -40,7 +40,6 @@
         };
 
         submitFormBtn.onclick = function () {
-            console.log(checkRequiredInputs());
             if (!checkRequiredInputs() || (!law1.checked && !law2.checked)) {
                 showErrors();
             } else {
