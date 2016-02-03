@@ -6,3 +6,7 @@ label.required:after {
 .colorValue {
     color: #999999;
 }
+
+.hidden {
+    display: none;
+}
