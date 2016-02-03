@@ -6,8 +6,7 @@
         var law2 = $('#law2');
         var additionalParamsForLaw1 = $('#additionalParams1');
         var additionalParamsForLaw2 = $('#additionalParams2');
-        var commonDiv = $('#commonPart');
-        var requiredInputFields = commonDiv.find('input.required');
+        var requiredInputFields = $('#commonPart').find('input.required');
         var chevronUp = panelHead.find('a#chevronUpHref');
         var chevronDown = panelHead.find('a#chevronDownHref');
 
