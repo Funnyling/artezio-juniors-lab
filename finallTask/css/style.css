@@ -10,3 +10,7 @@ label.required:after {
 .hidden {
     display: none;
 }
+body {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}

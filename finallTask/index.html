@@ -3,8 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Конструктор форм</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="jquery-2.2.0.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
-
+<div class="container" role="main">
+    <div id="firstPart" class="row">
+        <div class=form-group>
+            <div class="col-sm-6">
+                <label for="controlType" class="col-sm-4 control-label">Тип контрола:</label>
+                <div class="col-sm-8">
+                    <select id="controlType" class="form-control" name="controlType">
+                        <option value="-1"></option>
+                        <option value="1">Телефонный номер</option>
+                        <option value="2">Почтовый адрес</option>
+                        <option value="3">Поле ввода числа в экспонинциальном виде</option>
+                        <option value="4">Поле ввода числа</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label for="mask" class="col-sm-3 control-label">Маска:</label>
+                <div class="col-sm-9">
+                    <input id="mask" type="text" name="mask" class="form-control"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6">
+                <label for="parts" class="col-sm-4 control-label">Кол-во частей:</label>
+                <div class="col-sm-8">
+                    <input id="parts" type="text" name="parts" class="form-control"/>
+                </div>
+            </div>
+            <div class="col-sm-2 col-sm-offset-4">
+                <button id="addButton" class="btn btn-primary">Добавить</button>
+            </div>
+        </div>
+    </div>
+    <div id="secondPart" class="row">
+    </div>
+</div>
 </body>
 </html>
