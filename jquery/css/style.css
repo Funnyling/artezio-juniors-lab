@@ -1,0 +1,12 @@
+label.required:after {
+    content: " *";
+    color: red;
+}
+
+.colorValue {
+    color: #999999;
+}
+
+.hidden {
+    display: none;
+}
