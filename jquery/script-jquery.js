@@ -114,26 +114,28 @@
     }
 
     function setUpHintElement(element) {
-        if (element.val() === element.attr('title') || element.val() == '') {
-            element.val(element.attr('title'));
+        var elemValue = element.val();
+        var elemTitle = element.attr('title');
+        if (elemValue === elemTitle || elemValue == '') {
+            element.val(elemTitle);
             element.addClass('colorValue');
         }
 
         element.on('focus', function () {
-            if ($(this).val() === $(this).attr('title')) {
+            if (elemValue === elemTitle) {
                 $(this).removeClass('colorValue');
                 $(this).val('');
             }
         });
 
         element.on('blur', function () {
-            if ($(this).val() === $(this).attr('title') || $(this).val() == '') {
-                $(this).val($(this).attr('title'));
+            if (elemValue === elemTitle || elemValue == '') {
+                $(this).val(elemTitle);
                 $(this).addClass('colorValue');
             }
 
             if ($(this).hasClass('required') && $(this).parent().hasClass('has-error')
-                && $(this).val() !== $(this).attr('title') && $(this).val() != '') {
+                && elemValue !== elemTitle && elemValue != '') {
                 $(this).parent().removeClass('has-error');
                 $(this).parent().next().addClass('hidden');
             }
