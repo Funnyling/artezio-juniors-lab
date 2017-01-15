@@ -10,22 +10,29 @@
     //Валидные имена переменных
     var name = 'John';
     var age = 30;
-    var isMale = true;
+    var isMale = true,
+        $jqueryElement = {};
 
     var _ = 'Underscore',
         $ = 'Strange variable name',
         $jqueryElement = {};
 
-    var a = -2;
-    a = +a;
-    a = -a;
+    // var 2017year = 'New year';
+
+
+    var numericValue = -2;
+    numericValue = +numericValue; // -2
+    numericValue = -numericValue; // 2
+    ++numericValue; // 3
+    --numericValue; // 2
 
     var n = 123;
     n = 12.345;
     n = 3.14159265359e10;
     n = 090;
     n = 0x10201;
-    var value = null;
+    var nullVariable = null;
+    var undefinedVariable = null;
 
     alert(null >= 0); // true
 
@@ -95,14 +102,21 @@
     alert( undefined == 0 ); // false, т.к. это undefined (без преобразования)
     alert( undefined < 0 ); // false, т.к. undefined -> NaN
 
+    var benedict = {
+        name: 'Бенедикт Камбербэтч',
+        age: 30,
+        country: 'Великобритания'
+    };
 
+    function sayDeclarition(name) {
+        alert('Привет, ' + name);
+    }
 
+    var sayExpression = function (name) {
+        alert('Привет, ' + name);
+    };
 
-
-
-
-
-
-
+    sayExpression('Вася'); // Привет, Вася
+    sayDeclarition('Вася'); // Привет, Вася
 
 })();
