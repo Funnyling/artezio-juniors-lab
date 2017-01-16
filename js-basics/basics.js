@@ -55,7 +55,7 @@
 
     alert(access);
 
-    access = (age > 14) ? true : false;
+    var access = (age > 14) ? true : false;
 
     access = age > 14;
 
@@ -108,6 +108,22 @@
         country: 'Великобритания'
     };
 
+    var sheeps = 0;
+    while (sheeps < 3) {
+        alert(sheeps);
+        sheeps++;
+    }
+
+    var sheep = 0;
+    do {
+        alert(sheep);
+        sheep++;
+    } while (sheep < 3);
+
+    for(var sheep; sheep < 9; sheep++) {
+        alert(sheep);
+    }
+
     function sayDeclarition(name) {
         alert('Привет, ' + name);
     }
@@ -116,7 +132,108 @@
         alert('Привет, ' + name);
     };
 
+    var factor = function factorial(number) {
+        return number ? number * factorial(number - 1) : 1;
+    };
+
     sayExpression('Вася'); // Привет, Вася
     sayDeclarition('Вася'); // Привет, Вася
+    function resolveDirection() {return '';}
+
+    var direction = resolveDirection();
+    switch(direction) {
+        case 'left':
+            alert('Left');
+            break;
+        case 'right':
+            alert('Right');
+            break;
+        case 'forward':
+            alert('Forward');
+            break;
+        case 'back':
+            alert('Back');
+            break;
+        default:
+            alert('Неверное направление');
+    }
+
+    var sum = new Function('a,b', ' return a+b; ');
+
+    var result = sum(1, 2); // 3
+
+    var pass = prompt('Введите пароль администратора?');
+
+    var onEnterFunction = (pass === 'pa$$word') ?
+        function () { alert('Вы вошли как администратор.');  } :
+        function () { alert('Неверный пароль.'); };
+
+    onEnterFunction();
+
+    var onEnterFunction = function (password, equalityFunc, mismatchFunc) {
+        if (password === 'pa$$word') {
+            return equalityFunc;
+        } else {
+            return mismatchFunc;
+        }
+    };
+
+    function equalityFunc() {
+        alert('Вы вошли как администратор.');
+    }
+
+    var action = onEnterFunction("123qweASD_1", equalityFunc, function () { alert('Неверный пароль.')});
+    action();
+
+    var helloWorldMsg = 'Hello,' + ' JavaScript'; // Hello, JavaScript
+    var universalAnswer = 'Magic number' + 42; // Magic number 42
+
+    var result = 21 * '2'; // 42
+    result = 'abc' * 2; // NaN
+
+    'А' < 'Б'; // true
+    'Компьютер' > 'Коллега'
+    'Правило' > 'Право'
+
+    '2' > 1 // true, сравнивается как 2 > 1
+
+
+    '01' === 1 // false
+    false === 0 // false
+    true === 1 // false
+
+    null == undefined
+    +null // 0
+    +undefined // undefined
+
+    true || true // true
+    false || true // true
+    true || false // true
+    false || false // false
+    true || (x = 1)
+
+    false || 'верну строку'
+    1 || 0
+
+    1 && 5
+    null && 5
+    !!5
+    !!null
+    !true
+    !0
+
+    var sum = 0;
+
+    while (true) {
+        var value = +prompt("Введите число", '');
+        if (!value) break; // выходим из while
+        sum += value;
+    }
+
+    var sum = 0;
+    for (var i = 0; i < 10; i++) {
+        if (i % 2 == 0) continue;
+        sum += i;
+    }
 
 })();
