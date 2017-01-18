@@ -80,5 +80,84 @@
         var hugeSalary = 10000000;
         hugeSalary.toLocaleString();
 
+        var pi = 3.14159265358;
+
+        Math.floor(pi);
+        Math.ceil(pi);
+        Math.round(pi);
+
+        pi.toFixed(4);
+
+        Math.floor(pi * 1000) / 1000;
+        Math.ceil(pi * 1000) / 1000;
+        Math.round(pi * 1000) / 1000;
+
+        // Создает объект Date с текущей датой и временем
+        var yesterday = new Date();
+
+        // Создает объект Date, значение которого равно количеству миллисекунд (1/1000 секунды),
+        // прошедших с 1 января 1970 года GMT+0.
+        yesterday = new Date(1484769802411);
+
+        // Если единственный аргумент – строка, используется вызов Date.parse
+        yesterday = new Date('2017-01-18T18:00');
+        yesterday = new Date('2017-01-18T18:00+03:00');
+
+        // Дату можно создать, используя компоненты в местной временной зоне.
+        // Для этого формата обязательны только первые два аргумента.
+        // Отсутствующие параметры, начиная с hours считаются равными нулю, а date – единице.
+        yesterday = new Date(2017, 1, 18, 20, 15, 44);
+
+        // Метод Date.now() возвращает дату сразу в виде миллисекунд.
+        yesterday = Date.now();
+
+        // function sayHi() {
+        //     for (var i = 0; i < arguments.length; i++) {
+        //         alert('Hello, ' + anotherResult[i]);
+        //     }
+        // }
+
+        function sayHi() {
+            alert('Hello ' + arguments.join(', '));
+        }
+
+        sayHi('Benedict', 'John', 'Mickle'); // Hello, Benedict ...
+
+        function doTaxes(income, customerName, deduction) {
+            var taxDeduction = deduction || 50,
+                yourTax = income * 0.05 - taxDeduction;
+            console.log(" Dear " + customerName + ", your tax is " + yourTax);
+            return yourTax;
+        }
+
+        doTaxes(650, 'God Father', 500);
+
+        doTaxes(350, 'Someone');
+
+        doTaxes(350, 'Benedict', 0);
+
+
+        function setUpSelectElement(options) {
+            var width = options.width || 250;
+            var height = options.height || 50;
+            var elementClass = options.elementClass || 'form-control';
+            //...
+        }
+
+        var anotherOptions = {
+            height: 40
+        };
+
+        // Сравните вызов функции
+        setUpSelectElement(anotherOptions);
+        setUpSelectElement(null, 40, null);
+
+        anotherOptions.width = 200;
+        setUpSelectElement(anotherOptions);
+
+
+
+
+
     })();
 
