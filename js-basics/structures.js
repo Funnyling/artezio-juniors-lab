@@ -251,6 +251,9 @@
                 ' или более строк и ' + 'возвращает новую строку.';
 
         var cities = ['Минск', 'Брест', 'Гродно', 'Могилев'];
+        cities.forEach(function (city) {
+            city = city.toUpperCase();
+        });
 
         delete cities[1];
 
@@ -288,7 +291,7 @@
         });
 
 
-        for (var i =0; i < cities.length; i++) {
+        for (var i = 0; i < cities.length; i++) {
             console.log(cities[i]);
         }
 
