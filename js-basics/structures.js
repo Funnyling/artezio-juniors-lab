@@ -1,7 +1,7 @@
-    /**
-     * @author ntishkevich* @version 17.01.2017
-     *
-     */
+/**
+ * @author ntishkevich* @version 17.01.2017
+ *
+ */
     isNaN(NaN);       // true
     isNaN(undefined); // true
     isNaN({});        // true
@@ -111,6 +111,15 @@
         // Метод Date.now() возвращает дату сразу в виде миллисекунд.
         yesterday = Date.now();
 
+        var february28 = new Date(2017, 1, 28);
+
+        var today = new Date();
+        today.setSeconds(today.getSeconds() + 3600);
+
+        today.setDate(1);
+        today.setDate(0);
+        today.setDate(-1);
+
         // function sayHi() {
         //     for (var i = 0; i < arguments.length; i++) {
         //         alert('Hello, ' + anotherResult[i]);
@@ -156,6 +165,78 @@
         setUpSelectElement(anotherOptions);
 
 
+
+        var dogName = 'Лонг';
+        dogName = "Циклон";
+        dogName = new String('Дублон');
+        dogName = String('Юджин');
+
+        var developer = 'I\'m a developer',
+            doctor = "I am a \"very good\" doctor",
+            architector = "I'm\tan architector ",
+            crab = ' (\\/)!_!(\\/)';
+
+        dogName = 'Юджин\n';
+        dogName.length;
+
+        dogName.charAt(0);
+        dogName[0];
+
+        dogName.charAt(10);
+        dogName[10];
+
+        'Ваня' < 'Вася'
+        'Витрина' < 'Витя'
+        'Домашний' > 'Дом'
+
+        'Дом' >= 'Дом'
+
+        var stringTheory = 'Теория струн';
+
+        stringTheory.substring(7, 12);
+        stringTheory.substr(7, 5);
+        stringTheory.slice(7, 12);
+
+        stringTheory.substring(-6, 6);
+        stringTheory.substring(12, 7);
+
+        stringTheory.slice(-5);
+        stringTheory.slice(-5, -2);
+
+        var myObject = {};
+        myObject = new Object();
+        myObject = Object.create();
+
+        var human = {
+            name: 'Бенедикт Камбербэтч',
+            age: 30,
+            country: 'Великобритания'
+        };
+
+        human.home;
+        human['job'];
+
+        'country' in human;
+        human.country === undefined
+
+        'job' in human;
+        human.job === undefined;
+
+        delete human.country;
+        delete human.home;
+
+        var anotherHuman = {};
+        anotherHuman.name = 'Роберт Оппенгеймер';
+        anotherHuman.age = 62;
+        anotherHuman.country = 'США';
+
+        var strangeObject = {
+            magicvalue: 42,
+            '_': 'Странное свойство',
+            'newObject': {
+                '!мое_свойство': 15
+            }
+        };
 
 
 
