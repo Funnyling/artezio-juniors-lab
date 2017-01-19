@@ -238,6 +238,83 @@
             }
         };
 
+        for (var p in strangeObject) {
+            console.log('Свойство с именем ' + p +
+                ' значение - ' + strangeObject[p]);
+        }
+
+        var concat = 'Метод concat()'.concat(' объединяет текст из двух',
+            ' или более строк и ' ,
+            'возвращает новую строку.');
+
+        var concatWithPlus = 'Метод concat()' + ' объединяет текст из двух' +
+                ' или более строк и ' + 'возвращает новую строку.';
+
+        var cities = ['Минск', 'Брест', 'Гродно', 'Могилев'];
+
+        delete cities[1];
+
+        cities.splice(1, 1, 'Гомель');
+        cities.splice(1, 0, 'Брест');
+        cities.splice(-1, 0, 'Орша', 'Бобруйск');
+        cities.splice(-2, 1);
+
+        cities.slice(3, 4);
+        cities.slice(-1);
+
+        var str = cities.join(', ');
+
+        var numbers = [1, 8, 9, 7, 10, 3, 6];
+        numbers.sort();
+
+        numbers.sort(function (a, b) {
+            return a - b;
+        })
+
+        cities.map(function (city) {
+            return city.toUpperCase();
+        });
+
+        cities.forEach(function (city) {
+            console.log(city);
+        });
+
+        cities.filter(function (city) {
+            return city === 'Могилев';
+        });
+
+        cities.some(function (city) {
+            return city[0] === 'Г';
+        });
+
+
+        for (var i =0; i < cities.length; i++) {
+            console.log(cities[i]);
+        }
+
+        cities.push('Гомель');
+        cities.pop();
+
+        cities.shift();
+        cities.unshift('Минск');
+
+        cities.length;
+
+        cities.length = 1;
+
+        var allTypes = [true, 'string', 3.14, 42,
+            function(){}, {name: 'John Wick'}, []];
+
+        allTypes[5].name;
+
+        var newArray = new Array('Минск', 'Брест', 'Гродно', 'Могилев');
+        newArray[0];
+
+        newArray = new Array(42);
+        newArray[0];
+
+        var citiesAsString = 'Минск, Брест, Гродно, Могилев';
+        var array = citiesAsString.split(', ');
 
 
     })();

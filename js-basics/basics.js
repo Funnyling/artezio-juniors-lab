@@ -117,8 +117,8 @@
     var sheep = 0;
     do {
         alert(sheep);
-        sheep++;
-    } while (sheep < 3);
+        //sheep++;
+    } while (sheep++ < 3);
 
     for(var sheep; sheep < 9; sheep++) {
         alert(sheep);
