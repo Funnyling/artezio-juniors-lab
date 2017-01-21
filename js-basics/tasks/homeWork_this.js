@@ -66,7 +66,7 @@ console.log(generator()); // 13
 
 console.log(generator2()); // 0
 
-console.log(repeat(generator2, 5)); // [0, 2, 4, 6, 8 ]
+repeat(generator2, 5); // [0, 2, 4, 6, 8 ]
 
 
 
@@ -83,16 +83,16 @@ console.log(repeat(generator2, 5)); // [0, 2, 4, 6, 8 ]
 function Hamburger(size, stuffing) {
 
     /**
-     * Добавить добавку к гамбургеру. Можно добавить несколько
+     * Добавить начинку к гамбургеру. Можно добавить несколько
      * добавок, при условии, что они разные.
      *
-     * Нельзя добавить добавку, если размер амбургера
-     * Hamburger.SIZE_SMALL и кол-во добавок равно 5.
+     * Нельзя добавить начинку, если размер амбургера
+     * Hamburger.SIZE_SMALL и кол-во начинку равно 5.
      *
      * Если размер гамбургера Hamburger.SIZE_LARGE,
-     * можно добавлять не больше 10 добавок
+     * можно добавлять не больше 10 начинку
      *
-     * @param stuffing  Тип топпинга
+     * @param stuffing  Тип начинку
      */
     this.addStuffing = function (stuffing) {
 
