@@ -111,7 +111,7 @@
         // Метод Date.now() возвращает дату сразу в виде миллисекунд.
         yesterday = Date.now();
 
-        var february28 = new Date(2017, 1, 28);
+        var february29 = new Date(2017, 1, 29);
 
         var today = new Date();
         today.setSeconds(today.getSeconds() + 3600);

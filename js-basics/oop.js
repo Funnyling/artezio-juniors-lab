@@ -59,7 +59,7 @@
             }
         }
 
-        battleCry(2, 'За Лордерон! За Альясн!');
+        battleCry(2, 'За Лордерон! За Альянс!');
 
 
         function doTaxes(income, customerName) {
