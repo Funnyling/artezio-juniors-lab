@@ -143,6 +143,8 @@
 
         2..toString();
 
+        2 .toString();
+
         (2).toString();
 
         function Singer(name, album) {

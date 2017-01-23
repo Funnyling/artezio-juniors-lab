@@ -66,7 +66,7 @@ console.log(generator()); // 13
 
 console.log(generator2()); // 0
 
-repeat(generator2, 5); // [0, 2, 4, 6, 8 ]
+repeat(generator2, 5); // [2, 4, 6, 8, 10]
 
 
 

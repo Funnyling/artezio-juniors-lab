@@ -72,7 +72,7 @@
         whiteColor
     );
 
-    console.log(newColor);
+    console.log(newColor); // #a4e8e6
 
     function multiply(a, b) {
         return a * b;
@@ -137,12 +137,12 @@
 
     (function () {
         function Animal(name, canFly) {
-            var a = 42;
+            var localMessage = 'А чего добился ты?';
             this.name = name;
             this.canFly = canFly;
             this.fly = function () {
                 if (this.canFly) {
-                    console.log(this.name + ' может летать' + a);
+                    console.log(this.name + ' может летать. ' + localMessage);
                 } else {
                     console.log(this.name + ' не может летать');
                 }
@@ -161,18 +161,17 @@
             twilightSparkle.name,
             twilightSparkle.magicSkill
         );
-        twilightSparkle.fly(); // Сумеречная Искорка может летать
+        twilightSparkle.fly(); // Сумеречная Искорка может летать. А чего добился ты?
     })();
 
     (function () {
         function Animal(name, canFly) {
-            var a = 42;
             this.name = name;
             this.canFly = canFly;
         }
         Animal.prototype.fly = function() {
             if (this.canFly) {
-                console.log(this.name + ' может летать' + a);
+                console.log(this.name + ' может летать');
             } else {
                 console.log(this.name + ' не может летать');
             }
@@ -187,9 +186,60 @@
         MagicPony.prototype.constructor = MagicPony;
         var twilightSparkle = new MagicPony('Сумеречная Искорка',
             'Тяжёлое заклинание');
-        console.log(twilightSparkle); //{ name: 'Сумеречная Искорка',
-        // magicSkill: 'Тяжёлое заклинание', canFly: true }
-        twilightSparkle.fly(); // Сумеречная Искорка может летать
+        console.log(
+            twilightSparkle.name,
+            twilightSparkle.magicSkill
+        );
+        twilightSparkle.fly();
+
+        twilightSparkle instanceof MagicPony;
+
+        twilightSparkle instanceof Animal;
+
+        twilightSparkle instanceof Object;
+
+        twilightSparkle instanceof Array;
+
+        [1, 2, 3] instanceof Array;
+
+        [1, 2, 3] instanceof Number;
+
+    })();
+
+    (function () {
+        function Animal(name, canFly) {
+            this.name = name;
+            this.canFly = canFly;
+            this.canWalk = true;
+        }
+
+        Animal.prototype.fly = function() {
+            if (this.canFly) {
+                console.log(this.name + ' может летать');
+            } else {
+                console.log(this.name + ' не может летать');
+            }
+        };
+
+        function MagicPony(name, magicSkill) {
+            this.name = name;
+            this.magicSkill = magicSkill;
+            this.canFly = true;
+        }
+
+        MagicPony.prototype = Object.create(Animal.prototype);
+        MagicPony.prototype.constructor = MagicPony;
+
+        var twilightSparkle = new MagicPony(
+            'Сумеречная Искорка',
+            'Тяжелое заклинание'
+        );
+
+        for (var property in twilightSparkle) {
+            if (twilightSparkle.hasOwnProperty(property)) {
+                console.log(property); // name, magicSkill, canFly
+            }
+        }
     })();
 
 })();
