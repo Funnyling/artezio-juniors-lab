@@ -242,4 +242,37 @@
         }
     })();
 
+    var Animal = class {
+        constructor(name, canFly) {
+            this.name = name;
+            this.canFly = canFly;
+        }
+
+        fly() {
+            if (this.canFly) {
+                console.log(this.name + ' может летать');
+            } else {
+                console.log(this.name + ' не может летать');
+            }
+        }
+    }
+
+    var MagicPony = class extends Animal {
+        constructor (name, magicSkill) {
+            super(name, true);
+            this.magicSkill = magicSkill;
+        }
+    }
+
+    var twilightSparkle = new MagicPony(
+        'Сумеречная Искорка',
+        'Тяжелое заклинание'
+    );
+
+    for (var property in twilightSparkle) {
+        if (twilightSparkle.hasOwnProperty(property)) {
+            console.log(property); // name, magicSkill, canFly
+        }
+    }
+
 })();
