@@ -121,3 +121,16 @@ var californians;
  * [Number] Средний бал учащихся из Аляски, с именем начинающимся на 'S'
  */
 var alaskaSMeanGread;
+
+
+
+
+function adults(flag) {
+    flag = flag == null ? true : flag;
+    return function (student) {
+        return flag ^ (student.age < 18);
+    };
+}
+
+_adults  = students.filter(adults());
+_teens = students.filter(adults(false));
