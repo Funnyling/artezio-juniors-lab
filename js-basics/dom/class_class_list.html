@@ -1,5 +1,21 @@
     <!DOCTYPE html>
     <html lang="en">
+    <head>
+        <style>
+            .red {
+                background-color: red;
+            }
+            .green {
+                background-color: green;
+            }
+            .dark-green {
+                background-color: darkgreen;
+            }
+            .hot-pink {
+                background-color: hotpink;
+            }
+        </style>
+    </head>
     <body>
     <p>Симпсоны</p>
     <form class="family">
@@ -11,24 +27,6 @@
         <img id="maggie" class="simpson" src="maggie.png"/>
     </form>
     <footer class="sofa">Диван</footer>
-    </body>
-    </html>
-
-    <style>
-        .red {
-            background-color: red;
-        }
-        .green {
-            background-color: green;
-        }
-        .dark-green {
-            background-color: darkgreen;
-        }
-        .hot-pink {
-            background-color: hotpink;
-        }
-    </style>
-
     <script>
         var bart = document.querySelector('input.rebel');
         bart.className = 'green';
@@ -40,14 +38,9 @@
         var lisa = document.querySelector('span.jazz');
 
         lisa.classList.add('dark-green');
-        lisa.classList.add('hot-pink');
-
-
-        lisa.classList.toggle('dark-green');
-        lisa.classList.remove('hot-pink');
 
         lisa.classList.contains('jazz');
 
     </script>
-
-
+    </body>
+    </html>
