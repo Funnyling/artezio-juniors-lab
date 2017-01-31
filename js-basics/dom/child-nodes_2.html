@@ -1,0 +1,23 @@
+    <html lang="en">
+    <body>
+        <ul><li>Барт</li><li>Лиза</li><li>Мэгги</li></ul>
+    <script>
+    var list = document.body.childNodes[1];
+    var bart = list.firstChild;
+    var maggie = list.lastChild;
+    var lisa = bart.nextSibling;
+
+    console.log(bart);
+    console.log(maggie);
+    console.log(lisa);
+
+    lisa = maggie.previousSibling;
+    console.log(lisa);
+    </script>
+    <p>Тут есть и Барт и Лиза!</p>
+    </body>
+    </html>
+
+
+
+
