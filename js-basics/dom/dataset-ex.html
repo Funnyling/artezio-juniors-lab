@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <input id="inputWith42" value="42" data-hidden-value="666"/>
+    <input id="hiddenInput" type="hidden" data-user-id="006"/>
+
+<script>
+    var inputWith42 = document.getElementById('inputWith42');
+    inputWith42.dataset.hiddenValue = 777;
+
+    var hiddenInput = document.getElementById('hiddenInput');
+    hiddenInput.dataset.userId = '007';
+    hiddenInput.dataset.oldUserId = '006';
+</script>
+</body>
+</html>
