@@ -17,16 +17,14 @@
             var chevronDown = panelHead.querySelector('a#chevronDownHref');
             if (panelBody.classList.contains('collapsed')) {
                 panelBody.classList.remove('collapsed');
-                panelBody.classList.remove('hidden');
-                panelBody.classList.add('show');
-                chevronDown.classList.add('hidden');
-                chevronUp.classList.remove('hidden');
+                showElement(chevronUp);
+                showElement(panelBody);
+                hideElement(chevronDown);
             } else {
                 panelBody.classList.add('collapsed');
-                panelBody.classList.add('hidden');
-                panelBody.classList.remove('show');
-                chevronUp.classList.add('hidden');
-                chevronDown.classList.remove('hidden');
+                showElement(chevronDown);
+                hideElement(panelBody);
+                hideElement(chevronUp);
             }
         };
 
@@ -46,17 +44,18 @@
                 removeHintsFromInputs();
                 hideAllErrors();
                 //form.submit();
-                return false;
             }
             return false;
         };
 
         law1.onclick = function () {
-            showAdditionalParamsForLaw(this, law2, additionalParamsForLaw1, additionalParamsForLaw2);
+            var self = this;
+            showAdditionalParamsForLaw(self, law2, additionalParamsForLaw1, additionalParamsForLaw2);
         };
 
         law2.onclick = function () {
-            showAdditionalParamsForLaw(this, law1, additionalParamsForLaw2, additionalParamsForLaw1);
+            var self = this;
+            showAdditionalParamsForLaw(self, law1, additionalParamsForLaw2, additionalParamsForLaw1);
         };
 
         showHint();
@@ -132,7 +131,7 @@
 
         element.onfocus = function () {
             if (this.value === this.title) {
-                this.classList.remove('colorValue');
+                this.classList.toggle('colorValue');
                 this.value = '';
             }
         };
@@ -140,7 +139,7 @@
         element.onblur = function () {
             if (this.value === this.title || this.value == '') {
                 this.value = this.title;
-                this.classList.add('colorValue');
+                this.classList.toggle('colorValue');
             }
 
             if (this.classList.contains('required') && this.parentElement.classList.contains('has-error')
