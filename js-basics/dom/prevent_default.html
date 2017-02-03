@@ -1,0 +1,36 @@
+    <html lang="en">
+    <body>
+    <a id="donutHref" href="https://online.dunkinindia.com/">
+        Пончики!
+    </a>
+    <a id="mdnHref" href="https://www.mozilla.org/ru/">
+        Mozilla
+    </a>
+    <a id="goodStuffHref" href="http://govnokod.ru/">
+        Лучшие практики
+    </a>
+
+    <script>
+        var href = document.getElementById('donutHref');
+        var mozillaHref = document.getElementById('mdnHref');
+        var goodStuffHref = document.getElementById('goodStuffHref');
+
+        href.onclick = function () {
+            alert('Не перейдем по ссылки Пончики');
+            return false;
+        };
+
+        mozillaHref.addEventListener('click', function (event) {
+            alert('Не перейдем по ссылки Mozilla');
+            event.preventDefault();
+        });
+
+        goodStuffHref.onclick = function () {
+            alert('Посмотрим на хорошие практики');
+        };
+
+    </script>
+
+    </body>
+    </html>
+

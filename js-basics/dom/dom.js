@@ -7,6 +7,17 @@
     var curLocation = location.href;
     location.href = 'http://www.google.com';
 
-    myNavigator
-    curLocation
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('DOM готов');
+    });
+
+    window.onload = function () {
+        console.log('Window готов');
+    };
+
+    window.beforeunload = function () {
+        console.log('До закрытия страницы готов');
+    };
+
+
 })();

@@ -1,0 +1,27 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <body>
+    <button id="orderButton">Пончики!</button>
+    <script>
+        var orderButton = document.getElementById('orderButton'),
+                body = document.body,
+                i = 1;
+
+        orderButton.addEventListener('click', orderDonuts);
+
+        function orderDonuts() {
+            if (i > 3) {
+                orderButton.removeEventListener('click', orderDonuts);
+                return;
+            }
+
+            var image = document.createElement('img');
+            image.src = 'donut_' + i + '.png';
+            body.appendChild(image);
+            i++;
+        }
+    </script>
+    </body>
+    </html>
+
+
