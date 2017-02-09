@@ -15,7 +15,8 @@
         var mozillaHref = document.getElementById('mdnHref');
         var goodStuffHref = document.getElementById('goodStuffHref');
 
-        href.onclick = function () {
+        href.onclick = function (event) {
+            event.stopImmediatePropagation()
             alert('Не перейдем по ссылки Пончики');
             return false;
         };

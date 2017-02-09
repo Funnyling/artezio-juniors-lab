@@ -3,21 +3,13 @@
  * @version 29.01.2017
  */
 (function () {
-    var myNavigator = navigator.userAgent;
-    var curLocation = location.href;
-    location.href = 'http://www.google.com';
 
-    document.addEventListener('DOMContentLoaded', function () {
-        console.log('DOM готов');
-    });
-
-    window.onload = function () {
-        console.log('Window готов');
-    };
-
-    window.beforeunload = function () {
-        console.log('До закрытия страницы готов');
-    };
+    var infoBlock = document.getElementById('infoBlock');
+    var sizeRow = infoBlock.querySelector('.infoBlock-size');
+    var caloriesROw = infoBlock.querySelector('.infoBlock-size');
+    var topping = infoBlock.querySelector('.infoBlock-size');
+    var sizeRow = infoBlock.querySelector('.infoBlock-size');
+    sizeRow.textContent = '20';
 
 
 })();
