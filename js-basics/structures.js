@@ -272,7 +272,7 @@
 
         numbers.sort(function (a, b) {
             return a - b;
-        })
+        });
 
         cities.map(function (city) {
             return city.toUpperCase();
