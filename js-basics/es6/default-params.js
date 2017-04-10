@@ -16,7 +16,8 @@ showWarning(undefined, 200, undefined);
 // 200, 200, 'Предупреждение', undefined
 
 
-function showWarningWithDefaults(width=200, height=100, title='Предупреждение', message) {
+function showWarningWithDefaults(width=200, height=100,
+                                 title='Предупреждение', message) {
     // Создание от открытие предупреждения
 }
 

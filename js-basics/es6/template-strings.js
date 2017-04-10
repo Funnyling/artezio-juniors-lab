@@ -19,7 +19,7 @@ function authorize(user, action) {
 //noinspection JSDuplicatedDeclaration
 function authorize(user, action) {
     if (!user.hasPrivilege(action)) {
-        throw new Error(`Пользователю ${user.name} не разрешено ${action}.`);            
+        throw new Error(`Пользова телю ${user.name} не разрешено ${action}.`);
     }
 }
 
@@ -35,7 +35,7 @@ function authorizeWithTemplate(user, action) {
     }
 }
 
-user.name = 'Стив alert(\'xss уязвимость\')';
+user.name = 'Стив <script>alert(\'xss уязвимость\');</script>';
 authorizeWithTemplate(user, 'просмотр');
 
 // SaferHTML https://gist.github.com/jorendorff/1a17f69dbfaafa2304f0
@@ -70,5 +70,5 @@ function safeAuthorize(user, action) {
     }
 }
 
-user.name = 'Стив alert(\'xss уязвимость\')';
+user.name = 'Стив <script>alert(\'xss уязвимость\');</script>';
 authorize(user, 'просмотр');
