@@ -5,12 +5,12 @@
         "noImplicitAny": false,
         "noEmitOnError": true,
         "sourceMap": true,
-        "rootDir": "./"
+        "rootDir": "./src"
     },
     "files": [
         "src/**/*.ts"
     ],
     "exclude": [
-        "node_modules"
+        "node_modules/**"
     ]
 }
