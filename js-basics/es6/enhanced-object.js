@@ -123,7 +123,9 @@ let o = {
 
 
 let hasAccess = false;
-let o = {};
+let o = {
+    _id: 'secret id'
+};
 
 Object.defineProperty(o, 'id', {
     get: function() {
