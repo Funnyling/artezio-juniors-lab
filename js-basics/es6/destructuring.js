@@ -59,6 +59,28 @@ console.log(missing);
 // undefined
 
 
+function bar() {
+    return {
+        x: 4,
+        y: 5,
+        z: 6
+    };
+}
+
+{
+let tmp = bar(),
+    x = tmp.x,
+    y = tmp.y,
+    z = tmp.z;
+}
+
+{
+let {x: x, y: y, z: z} = bar();
+}
+
+{
+let {x, y, z} = bar();
+}
 
 
 
