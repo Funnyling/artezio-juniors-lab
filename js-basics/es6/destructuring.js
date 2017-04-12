@@ -17,13 +17,13 @@ let first = fruits[0],
 
 
 
-let [zed , [[bat], baz]] = [14, [[42], 88]];
+let [a , [[b], c]] = [14, [[42], 88]];
 
-console.log(zed);
+console.log(a);
 // 14
-console.log(bat);
+console.log(b);
 // 42
-console.log(baz);
+console.log(c);
 // 88
 
 
