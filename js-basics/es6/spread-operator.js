@@ -10,6 +10,8 @@ let result = myFunction.apply(null, args);
 
 result = myFunction(...args);
 
+feature
+
 const favoriteFruits = ['Apple', 'Banana', 'Grapes'];
 const fruits = ['Strawberry', ...favoriteFruits, 'Orange', 'Cherry'];
 // ["Strawberry", "Apple", "Banana", "Grapes", "Orange", "Cherry"]
