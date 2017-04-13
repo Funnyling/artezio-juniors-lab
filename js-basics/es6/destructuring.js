@@ -166,7 +166,7 @@ function returnMultipleValuesObject() {
     };
 }
 
-let {x, y} = returnMultipleValuesObject();
+let {foo: x, bar: y} = returnMultipleValuesObject();
 
 const temp = returnMultipleValuesObject();
 let x = temp.foo,
@@ -183,7 +183,12 @@ function removeBreakpoint({ url, line, column }) {
     // ...
 }
 
-removeBreakpoint({url: '../destructuring.js', line: 70, column: 1});
+let options = {
+    url: '../destructuring.js',
+    line: 70,
+    column: 1
+}
+removeBreakpoint(options);
 
 
 jQuery.ajax = function (url, {
