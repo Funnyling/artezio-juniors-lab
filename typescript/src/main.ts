@@ -1,12 +1,9 @@
-function greeting(name: string) {
-    console.log(`Hello, ${name}`);
-}
+import Hamburger from './Hamburger';
+import Size from './Size';
 
-greeting('24155152');
+let a: [number, string];
+a = [1, 'stirng', 'strings'];
 
-class A {
-    private _a: number;
-    constructor() {
-        this._a = 42;
-    }
+function run(): void {
+    let hamburger: Hamburger = new Hamburger(Size.small);
 }
