@@ -2,10 +2,6 @@
  * @author ntishkevich
  * @version 16.04.2017
  */
-/**
- * @author ntishkevich
- * @version 16.04.2017
- */
 
 function spendWeekend(date, play) {
     let promise = new Promise((resolve, reject) => {
@@ -13,7 +9,7 @@ function spendWeekend(date, play) {
             if (Math.random() > .5) {
                 resolve({date, play});
             } else {
-                reject(`Простите, но свободных столиков на ${date}`);
+                reject(`Простите, но билетов не осталось на ${date}`);
             }
         }, 5000);
     })
