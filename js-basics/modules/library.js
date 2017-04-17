@@ -7,13 +7,15 @@ function сделатьХорошо() {
     console.log('Делаем все хорошо');
 }
 
-let magicNumber = 42;
+let магическоеЧисло = 42;
 
-export const appVersion = '0.0.1 alpha';
-export let appName = 'ГИС ЖКХ';
+export const версия = '0.0.1 alpha';
+function локальнаяФункция() {
+    console.log('Меня не экспортнули :(');
+}
 
 export function неДелаемПлохо() {
     console.log('Запрещаем делать плохо');
 }
-export {magicNumber};
+export {магическоеЧисло};
 export {сделатьХорошо};

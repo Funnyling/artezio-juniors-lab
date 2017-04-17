@@ -25,7 +25,7 @@ function successBookingTable(table, success, error) {
 }
 
 function errorBooking(error) {
-    console.log(error);
+    console.log(error); // Immediate Invocation Function Expression
 }
 
 spendWeekend('21.04.2017', 'Волки и овцы', (ticket) => {

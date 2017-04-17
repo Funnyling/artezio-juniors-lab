@@ -2,20 +2,20 @@
  * @author ntishkevich
  * @version 16.04.2017
  */
-import {сделатьХорошо} from './app';
-
-import {неДелаемПлохо, appVersion, appName} from './app';
+import {сделатьХорошо} from './library';
+import {неДелаемПлохо} from './library';
+import {версия} from './library';
 
 сделатьХорошо();
 
 неДелаемПлохо();
 
-console.log(`${appName} - ${appVersion}`);
+console.log(`${версия}`);
 
 
-import * as app from './app';
+import * as library from './library';
 
-app.сделатьХорошо();
-app.неДелаемПлохо();
+library.сделатьХорошо();
+library.неДелаемПлохо();
 
-console.log(`${app.appName} - ${app.appVersion}`);
+console.log(`${library.версия}`);
