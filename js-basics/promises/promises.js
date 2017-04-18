@@ -11,19 +11,40 @@ function spendWeekend(date, play) {
             } else {
                 reject(`Простите, но билетов не осталось на ${date}`);
             }
-        }, 5000);
-    })
+        }, 1000);
+    });
+
     return promise;
 }
 
-function bookTicket(ticket) {
+function bookTable(ticket) {
     console.log(`Вы собираетесь на пьесу ${ticket.play}`);
-    return {date: ticket.date};
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (Math.random() > .5) {
+                resolve({date: ticket.date});
+            } else {
+                reject(`Простите, но столиков не осталось на ${date}`);
+            }
+        }, 2000);
+    });
+
+    return promise;
 }
 
-function bookTable(table) {
+function inviteJoji(table) {
     console.log(`Вы забронировали столик на ${table.date}`);
-    return {name: 'Joji'};
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (Math.random() > .5) {
+                resolve({name: 'Joji'});
+            } else {
+                reject('Простите, но Joji не пойдет никуда : (');
+            }
+        }, 2000);
+    });
+
+    return promise;
 }
 
 function errorBooking(error) {
@@ -31,7 +52,7 @@ function errorBooking(error) {
 }
 
 spendWeekend('21.04.2017', 'Волки и овцы')
-    .then(bookTicket)
     .then(bookTable)
+    .then(inviteJoji)
     .then(friend => console.log(`${friend.name} пойдет с вами`))
     .catch(errorBooking);

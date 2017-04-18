@@ -20,7 +20,10 @@ library.неДелаемПлохо();
 
 console.log(`${library.версия}`);
 
-import {релиз as сделатьХорошо} from './library';
+import {default as сделатьХорошо} from './library';
+import сделатьХорошо from './library';
+
+import './arrays-includes';
 
 сделатьХорошо();
 релиз(); // error: undefined is not a function

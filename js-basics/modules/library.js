@@ -20,3 +20,11 @@ export function неДелаемПлохо() {
 export {магическоеЧисло};
 export {сделатьХорошо};
 export {сделатьХорошо as релиз};
+
+import { сделатьХорошо } from "./library.js";
+export { сделатьХорошо };
+
+export {сделатьХорошо} from "./library.js";
+export {сделатьХорошо as релиз} from "./library.js";
+export * from "./library.js";
+

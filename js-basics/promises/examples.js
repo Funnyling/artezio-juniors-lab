@@ -24,7 +24,7 @@ myPromise = new Promise(resolve => {
 
 let resolvedPromise = Promise.resolve(42);
 
-let promises = Promise.all([rejectedPromise, resolvedPromise]);
+let promises = Promise.all([rejectedPromise, resolvedPromise]).then(values => console.log(values));
 
-let race = Promise.race([rejectedPromise, resolvedPromise]);
+let race = Promise.race([rejectedPromise, resolvedPromise]).then(value => console.log(value));
 
