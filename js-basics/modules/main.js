@@ -19,3 +19,8 @@ library.сделатьХорошо();
 library.неДелаемПлохо();
 
 console.log(`${library.версия}`);
+
+import {релиз as сделатьХорошо} from './library';
+
+сделатьХорошо();
+релиз(); // error: undefined is not a function
