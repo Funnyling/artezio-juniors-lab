@@ -18,13 +18,6 @@ export function неДелаемПлохо() {
     console.log('Запрещаем делать плохо');
 }
 export {магическоеЧисло};
+export {новаяВерсия};
 export {сделатьХорошо};
-export {сделатьХорошо as релиз};
-
-import { сделатьХорошо } from "./library.js";
-export { сделатьХорошо };
-
-export {сделатьХорошо} from "./library.js";
-export {сделатьХорошо as релиз} from "./library.js";
-export * from "./library.js";
 
