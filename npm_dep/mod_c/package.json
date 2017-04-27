@@ -1,0 +1,17 @@
+{
+  "name": "artezio_mod_c",
+  "version": "1.0.0",
+  "description": "artezio_mod_c npm basic",
+  "main": "aretzio_mod_c.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "artezio"
+  ],
+  "author": "ntishkevich",
+  "license": "ISC",
+  "dependencies": {
+    "artezio_mod_b": "2.0.0"
+  }
+}

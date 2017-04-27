@@ -22,7 +22,7 @@ function say(name: string, phrase: string): void;
 function say(name: string, times: number): void;
 
 function say(name: string, smth: number|string): void {
-    if(typeof smth === 'number') {
+    if (typeof smth === 'number') {
         // number overload
         console.log(`${name} meows ${smth.toString(8)} times.`)
     } else {

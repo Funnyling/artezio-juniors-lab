@@ -1,0 +1,20 @@
+{
+  "name": "npm_basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "npm_basic.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "artezio_mod_a": "^1.0.0",
+    "artezio_mod_c": "^1.0.0",
+    "lodash": "^3.10.0",
+    "moment": "^2.18.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
