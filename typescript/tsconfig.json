@@ -5,9 +5,9 @@
         "noImplicitAny": false,
         "noEmitOnError": false,
         "sourceMap": true,
-        "rootDir": "./src"
+        "outDir": "./dist"
     },
-    "files": [
+    "includes": [
         "src/**/*.ts"
     ],
     "exclude": [

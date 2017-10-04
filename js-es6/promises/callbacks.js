@@ -5,7 +5,7 @@
 
 function spendWeekend(date, play, success, error) {
     setTimeout(() => {
-        let table = Math.random() > .5 ? {date, play} : null;
+        const table = Math.random() > .5 ? {date, play} : null;
         if (!table) {
             error(`Простите, но билетов не осталось на ${date}`);
         } else {

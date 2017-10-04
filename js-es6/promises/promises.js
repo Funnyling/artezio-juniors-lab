@@ -4,7 +4,7 @@
  */
 
 function spendWeekend(date, play) {
-    let promise = new Promise((resolve, reject) => {
+    const promise = new Promise((resolve, reject) => {
         setTimeout(() => {
             if (Math.random() > .5) {
                 resolve({date, play});
@@ -19,7 +19,7 @@ function spendWeekend(date, play) {
 
 function bookTable(ticket) {
     console.log(`Вы собираетесь на пьесу ${ticket.play}`);
-    let promise = new Promise((resolve, reject) => {
+    const promise = new Promise((resolve, reject) => {
         setTimeout(() => {
             if (Math.random() > .5) {
                 resolve({date: ticket.date});
@@ -34,7 +34,7 @@ function bookTable(ticket) {
 
 function inviteJoji(table) {
     console.log(`Вы забронировали столик на ${table.date}`);
-    let promise = new Promise((resolve, reject) => {
+    const promise = new Promise((resolve, reject) => {
         setTimeout(() => {
             if (Math.random() > .5) {
                 resolve({name: 'Joji'});

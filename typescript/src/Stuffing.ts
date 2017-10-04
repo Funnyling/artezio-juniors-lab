@@ -3,9 +3,9 @@
  */
 
 export default class Stuffing {
-    public name: string;
-    public price: number;
-    public calories: number;
+    name: string;
+    price: number;
+    calories: number;
 
     constructor(name: string, price: number, calories: number) {
         this.name = name;
