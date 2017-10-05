@@ -1,7 +1,3 @@
-/**
- * @author ntishkevich
- * @version 27.12.2016
- */
 (function () {
     // Глобальная переменная
     helloWorld = 'Hello World';
