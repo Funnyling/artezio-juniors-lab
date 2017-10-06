@@ -90,9 +90,9 @@
     alert( 0 == "\n0\n" ); // true
 
 
-    alert( null >= 0 ); // true, т.к. null преобразуется к 0
-    alert( null > 0 ); // false (не больше), т.к. null преобразуется к 0
-    alert( null == 0 ); // false (и не равен!), т.к. == рассматривает null особо.
+    alert( null > 0 ); // false (не больше)
+    alert( null == 0 ); // false (и не равен!)
+    alert( null >= 0 ); // true, т.к. null преобразуется к 0 RTFM!11
 
     alert( undefined > 0 ); // false, т.к. undefined -> NaN
     alert( undefined == 0 ); // false, т.к. это undefined (без преобразования)
