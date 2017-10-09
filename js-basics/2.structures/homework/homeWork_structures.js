@@ -1,4 +1,44 @@
-// Исходные данные
+/**
+ * Сортировка объектов
+ *
+ * Напишите код, который отсортирует массив объектов people по полю age.
+ * Выведите список имён в массиве после сортировки.
+ */
+var vasya = { name: "Вася", age: 23 };
+var masha = { name: "Маша", age: 18 };
+var vovochka = { name: "Вовочка", age: 6 };
+
+var people = [ vasya , masha , vovochka ];
+
+// теперь people: [vovochka, masha, vasya]
+alert(people[0].age); // 6
+
+
+/**
+ * Добавить класс в строку
+ *
+ * В объекте есть свойство className,
+ * которое содержит список «классов» – слов, разделенных пробелом  className: 'open menu'
+ *
+ * Создайте функцию addClass(obj, cls), которая добавляет в список класс cls,
+ * но только если его там еще нет. Функция не должна добавлять лишних пробелов.
+ *
+ */
+var obj = {
+    className: 'open menu'
+};
+
+addClass(obj, 'new'); // obj.className='open menu new'
+addClass(obj, 'open'); // без изменений (класс уже существует)
+addClass(obj, 'me'); // obj.className='open menu new me'
+
+alert(obj.className); // "open menu new me"
+
+/**
+ * Даны след. исходные данные, используя методы типа Array,
+ * необходимо выполнить некие операции с массивом данных,
+ * чтобы получился результат, описанный над каждой переменной
+ */
 var students = [
     {
         name: 'John',
@@ -52,15 +92,11 @@ var students = [
 ];
 
 
-
 /**
- * ===================
  *
  * Записать выражения для подсчета и присвоения следующий данных
  *
- * ===================
  */
-
 
 
 /**
@@ -121,16 +157,3 @@ var californians;
  * [Number] Средний бал учащихся из Аляски, с именем начинающимся на 'S'
  */
 var alaskaSMeanGread;
-
-
-
-
-function adults(flag) {
-    flag = flag == null ? true : flag;
-    return function (student) {
-        return flag ^ (student.age < 18);
-    };
-}
-
-_adults  = students.filter(adults());
-_teens = students.filter(adults(false));

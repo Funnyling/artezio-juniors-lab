@@ -83,14 +83,6 @@
         godGatherTaxes = doGodFatherTaxes();
 
 
-        function mystery() {
-            var secret = 6;
-            function mystery2(multiplier) {
-                multiplier *= 3;
-                return secret * multiplier;
-            }
-            return mystery2;
-        }
 
         function foo() {
             bar();
@@ -106,6 +98,15 @@
             number = 42;
             return number;
             n = 15;
+        }
+
+        function mystery() {
+            var secret = 6;
+            function mystery2(multiplier) {
+                multiplier *= 3;
+                return secret * multiplier;
+            }
+            return mystery2;
         }
 
         var hidden = mystery();
@@ -152,8 +153,10 @@
             this.album = album;
         }
 
-        var pinkGuy = new Singer('Pink Guy', 'Pink Season');
-        console.log(pinkGuy); //{name: 'Pink Guy', phrase: 'Pink Season'}
+        var pinkGuy =
+            new Singer('Pink Guy', 'Pink Season');
+        console.log(pinkGuy);
+        //{name: 'Pink Guy', phrase: 'Pink Season'}
 
         var pilot = {
             name: 'Steve',

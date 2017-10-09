@@ -1,5 +1,6 @@
 /**
- * @author ntishkevich* @version 17.01.2017
+ * @author ntishkevich
+ * @version 17.01.2017
  *
  */
     isNaN(NaN);       // true
