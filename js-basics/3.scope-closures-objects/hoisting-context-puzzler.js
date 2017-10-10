@@ -5,6 +5,9 @@
  * noinspection JSDuplicatedDeclaration
  */
 
+/**
+ * 1.
+ */
 function theBridgeOfHoistingDoom() {
     var sword,
         dwarf,
@@ -28,7 +31,60 @@ function theBridgeOfHoistingDoom() {
 
 console.log(theBridgeOfHoistingDoom());
 
+/**
+ * 2.
+ */
+function getProp() {
+    return this.prop;
+}
 
+window.prop = 'Я - window';
+var obj = {prop: 'Я - obj', getProp: getProp };
+obj.myMethod = function () {
+    console.log(this);
+};
+
+getProp(); // ???
+
+obj.getProp(); // ???
+
+obj.myMethod(); // ???
+
+/**
+ * 3.
+ */
+obj.myMethod = function () {
+    // console.log(this);
+    setTimeout(function () {
+        console.log(this); // ???
+    }, 100);
+};
+obj.myMethod();
+
+/**
+ * 4.
+ */
+obj.myMethod = function () {
+    setTimeout(function () {
+        console.log(this); // ???
+    }.bind(this), 100);
+};
+obj.myMethod();
+
+/**
+ * 5.
+ */
+obj.myMethod = function () {
+    var that = this;
+    setTimeout(function () {
+        console.log(that); // ???
+    }, 100);
+};
+obj.myMethod();
+
+/**
+ * 6.
+ */
 function Person(name, gender) {
     this.name = name;
     this.gender = gender;
@@ -38,50 +94,26 @@ function Person(name, gender) {
     };
 
     this.greet = function (response) {
-        this.sayGreetings(); /// ?
+        this.sayGreetings(); // ???
         response();
     };
 }
 
 var steve = new Person('steve', 'M');
-var peter = new Person("Peter", 'M');
+var peter = new Person('Peter', 'M');
 
 peter.greet(steve.sayGreetings);
 
+/**
+ * 7.
+ */
 function Person(name, gender) {
     this.name = name;
     this.gender = gender;
 
-    this.sayGreetings = function () {
-        console.log(this.name + ' says "Hello!"');
-    };
-
-    this.greet = function (response) {
-        (function () {
-            this.sayGreetings(); // ???
-        })();
-        response();
-    };
-}
-var steve = new Person('Steve', 'M');
-var peter = new Person("Peter", 'M');
-
-peter.greet(steve.sayGreetings);
-
-var steve = new Person('Steve', 'M');
-var peter = new Person("Peter", 'M');
-
-peter.greet(steve.sayGreetings);
-
-function Person(name, gender) {
-    this.name = name;
-    this.gender = gender;
-
-    this.sayGreetings = function (callBack) {
-        if (callBack) {
-            callBack();
-        } else {
-            console.log(this.name + ' says "Hello!"');
+    this.sayGreetings = function (greetingCb) {
+        if (greetingCb && greetingCb instanceof Function) {
+            greetingCb();
         }
     };
 
@@ -97,20 +129,15 @@ var peter = new Person('Peter', 'M');
 
 peter.greet(steve);
 
+/**
+ * 8.
+ */
 function Person(name, gender) {
     this.name = name;
     this.gender = gender;
 
     this.sayGreetings = function () {
         console.log(this.name + ' says "Hello!"');
-    };
-
-    this.greet = function (response) {
-        var _this = this; // ??
-        (function () {
-            _this.sayGreetings();
-        })();
-        response();
     };
 
     this.greet = function (person) {
@@ -121,59 +148,6 @@ function Person(name, gender) {
         this.sayGreetings(callBack);
     };
 }
-
-function getProp() {
-    return this.prop;
-}
-
-window.prop = 'Я - window';
-var obj = {prop: 'Я - obj', getProp: getProp };
-
-getProp();
-
-obj.getProp();
-
-getProp.apply(obj);
-
-getProp.call(obj);
-
-getProp.call();
-
-var obj = {};
-
-obj.myMethod = function () {
-    console.log(this); // this = `obj`
-};
-
-obj.myMethod();
-
-var obj = {};
-obj.myMethod = function () {
-    console.log(this); // this = obj
-    setTimeout(function () {
-        console.log(this); // window object :O!!!
-    }, 100);
-};
-obj.myMethod();
-
-var obj = {};
-obj.myMethod = function () {
-    console.log(this); // this = obj
-    setTimeout(function () {
-        console.log(this); // this = obj
-    }.bind(this), 100);
-};
-obj.myMethod();
-
-var obj = {};
-obj.myMethod = function () {
-    var that = this;
-    console.log(this); // this = obj
-    setTimeout(function () {
-        console.log(that); // that (this) = obj
-    }, 100);
-};
-obj.myMethod();
 
 
 // crazy stuff
