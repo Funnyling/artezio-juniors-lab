@@ -150,7 +150,10 @@ function Person(name, gender) {
 }
 
 
-// crazy stuff
+/**
+ *
+ * 9. crazy stuff
+ */
 var obj = {};
 obj.myMethod = function () {
     console.log(this);
