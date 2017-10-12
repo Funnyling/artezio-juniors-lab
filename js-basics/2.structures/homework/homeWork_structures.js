@@ -34,6 +34,7 @@ addClass(obj, 'me'); // obj.className='open menu new me'
 
 alert(obj.className); // "open menu new me"
 
+
 /**
  * Даны след. исходные данные, используя методы типа Array,
  * необходимо выполнить некие операции с массивом данных,

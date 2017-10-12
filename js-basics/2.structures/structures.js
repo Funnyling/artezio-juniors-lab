@@ -121,11 +121,11 @@
         today.setDate(0);
         today.setDate(-1);
 
-        // function sayHi() {
-        //     for (var i = 0; i < arguments.length; i++) {
-        //         alert('Hello, ' + anotherResult[i]);
-        //     }
-        // }
+        function sayHi() {
+            for (var i = 0; i < arguments.length; i++) {
+                alert('Hello, ' + anotherResult[i]);
+            }
+        }
 
         function sayHi() {
             alert('Hello ' + arguments.join(', '));

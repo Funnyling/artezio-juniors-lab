@@ -2,7 +2,7 @@
  * @author ntishkevich
  */
 
-magicNumber = 42;
+var magicNumber = 42;
 
 magicNumber.toString(16);
 magicNumber.toString('16');
