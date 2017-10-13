@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .red {
+            background-color: red;
+        }
+        .green {
+            background-color: green;
+        }
+        .dark-green {
+            background-color: darkgreen;
+        }
+        .hot-pink {
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+<p>Симпсоны</p>
+<form class="family">
+    <input class="child rebel simpson" value="Барт"/>
+    <label class="form-label housewife mother simpson">
+        <span class="jazz child simpson">Лиза</span>
+        Мардж
+    </label>
+    <img id="maggie" class="simpson" src="images/maggie.png"/>
+</form>
+<footer class="sofa">Диван</footer>
+<script>
+    var bart = document.querySelector('input.rebel');
+    bart.className = 'green';
+    bart.className += ' ' + 'red';
+
+    var maggie = document.getElementById('maggie');
+    maggie.setAttribute('class', 'hot-pink');
+
+    var lisa = document.querySelector('span.jazz');
+
+    lisa.classList.add('dark-green');
+
+    lisa.classList.contains('jazz');
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html lang="en">
+<body>
+    <ul>
+        <li>Барт</li>
+        <li>Лиза</li>
+        <li>Мэгги</li>
+    </ul>
+    <script>
+        var list = document.body.children[0];
+        var bart = list.firstElementChild;
+        var maggie = list.lastElementChild;
+        var lisa = bart.nextElementSibling;
+
+        console.log(bart);
+        console.log(maggie);
+        console.log(lisa);
+
+        lisa = maggie.previousElementSibling;
+        console.log(lisa);
+    </script>
+</body>
+</html>
+
+
+
+
+
