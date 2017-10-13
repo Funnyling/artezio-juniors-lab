@@ -106,8 +106,9 @@
     (function () {
         function Parent(value) {
             this.value = value;
-            this.parentField = 42;
         }
+
+        Parent.prototype.parentField = 42;
 
         function Child(value, childField) {
             this.value = value;
