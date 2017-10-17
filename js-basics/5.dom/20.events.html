@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <button onclick="orderDonuts()">Пончики!</button>
+
+    <img src="images/donut_1.png" style="display: none;"/>
+    <img src="images/donut_2.png" style="display: none;"/>
+    <img src="images/donut_3.png" style="display: none;"/>
+<script>
+    function orderDonuts(event) {
+        var images = document.getElementsByTagName('img');
+        for (var i = 0; i < images.length; i++) {
+            images[i].style.display = 'block';
+        }
+    }
+</script>
+</body>
+</html>
+
+

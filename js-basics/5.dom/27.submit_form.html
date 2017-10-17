@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <form name="myForm" onsubmit="onSubmit()">
+        <label>
+            Первый: Enter в текстовом поле
+            <input name="textInput" type="text" value="Текст">
+            <br>
+        </label>
+        <label>
+            Второй: Нажать на "Отправить":
+            <input name="sumbitInput" type="submit" value="Отправить">
+            <br>
+        </label>
+        <label>
+            Третий: Вызвать метод у формы:
+            <button id="submitBtn">Отправить</button>
+            <br>
+        </label>
+
+    </form>
+    <script>
+        var submitBtn = document.getElementById('submitBtn');
+        var myForm = document.forms.myForm;
+        myForm = document.forms[0];
+
+        var textInput = myForm.elements.textInput,
+            submitInput = myForm.elements[1];
+
+        console.log(textInput);
+        console.log(submitInput);
+
+        submitBtn.onclick = function () {
+            myForm.submit();
+            return onSubmit();
+        };
+
+        function onSubmit () {
+            alert('Данные отправлены!');
+            return false;
+        }
+    </script>
+</body>
+</html>
