@@ -94,7 +94,7 @@ let {x, y, z} = bar();
 
 
 let aa = 10, bb = 20;
-
+let AA, BB;
 let o = {x: aa, y: bb};
 let {x: AA, y: BB} = o;
 
