@@ -29,11 +29,13 @@ function showWarningWithDefaults(message, width = 200, height = 100,
     );
     // Создание модального окна "Предупреждение"
 }
+showWarningWithDefaults('Предупреждаю! Буду стрелять!', undefined, 200);
+// message = Предупреждаю! Буду стрелять! width = 200 height = 200 title = 'Предупреждение'
+
+
 showWarningWithDefaults('Предупреждаю! Буду стрелять!', null, 200);
 // message = Предупреждаю! Буду стрелять! width = null height = 200 title = 'Предупреждение'
 
-showWarningWithDefaults('Предупреждаю! Буду стрелять!', undefined, 200);
-// message = Предупреждаю! Буду стрелять! width = 200 height = 200 title = 'Предупреждение'
 
 function animalSentenceFancy(animals2 = 'tigers',
                              animals3 = (animals2 === 'bears') ? 'sea lions' : 'bears') {

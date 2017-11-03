@@ -134,4 +134,4 @@ const style = {
     background: 'green'
 };
 style.textAlign = 'center';
-style.verticalAlign = 'center';
+style = null;
