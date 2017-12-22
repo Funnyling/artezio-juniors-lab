@@ -57,3 +57,4 @@ crashlytics-build.properties
 .vscode/
 typescript/dist/
 typescript/node_modules/
+trainees/*
