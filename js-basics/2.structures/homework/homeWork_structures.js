@@ -158,3 +158,32 @@ var californians;
  * [Number] Средний бал учащихся из Аляски, с именем начинающимся на 'S'
  */
 var alaskaSMeanGread;
+
+
+
+
+
+
+
+
+
+
+const add = (x) => (y) => x + y;
+
+function add(x) {
+    return function (y) {
+        return x + y;
+    }
+}
+
+
+
+
+const multiply = (x) => (y) => x * y;
+const combine = (f1, f2) => (y) => f2(f1(y));
+
+combine(add(5), multiply(2))(4);
+
+
+
+

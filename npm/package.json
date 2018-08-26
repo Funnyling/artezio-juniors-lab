@@ -1,0 +1,21 @@
+{
+  "name": "npm-course",
+  "version": "0.0.1",
+  "description": "Npm course",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "keywords": [
+    "npm",
+    "test"
+  ],
+  "author": "ntishkevich",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.86.0",
+    "request-promise": "^4.2.2",
+    "tough-cookie": "^2.3.4"
+  }
+}

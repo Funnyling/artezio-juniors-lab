@@ -24,6 +24,6 @@ import {default as сделатьХорошо} from './library';
 import сделатьХорошо from './library';
 
 import './arrays-includes';
-
+[].pushAll();
 сделатьХорошо();
 релиз(); // error: undefined is not a function
