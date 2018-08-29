@@ -1,17 +1,21 @@
 {
-    "name": "my cool library",
-    "version": 5,
-    "is-actual": true,
-    "dependencies": {
-        "bootstrap": "~3.1",
-        "jquery": "~1.10.0",
-        "lodash": "2.4.1"
+    "name": "json-example",
+    "version": "0.0.1",
+    "description": "json example",
+    "main": "index.js",
+    "scripts": {
+        "test": "gulp test"
     },
-    "ignore": [
-        "*.test.js",
-        "libs",
-        "build",
-        "test",
-        "temp"
-    ]
+    "keywords": [
+        "npm",
+        "test"
+    ],
+    "author": "ntishkevich",
+    "license": "ISC",
+    "dependencies": {
+        "cheerio": "^1.0.0-rc.2",
+        "request": "^2.86.0",
+        "request-promise": "^4.2.2",
+        "tough-cookie": "^2.3.4"
+    }
 }
