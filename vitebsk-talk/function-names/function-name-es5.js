@@ -56,7 +56,7 @@ const students = [
     }
 ];
 
-const menNames = students
+const states = students
     .filter(function (student) {
         return student.gender === 'M';
     })
@@ -64,7 +64,7 @@ const menNames = students
         return student.state.toUpperCase();
     });
 
-console.log(menNames);
+console.log(states);
 
 /**
  * VM116:64 Uncaught TypeError: Cannot read property 'toUpperCase' of undefined
@@ -81,7 +81,40 @@ console.log(menNames);
 
 // Варианты: задать имя, вынести в переменную, вынести в именованное функциональное объявление
 
-// Все это замечательно, но в ES5 не было стандартизировано это поведение и не все браузеры и не всегда выводили имена функций в стеке ошибок
-// Занимательно то, что в ES6 стандартизовали свойство Function.name, которое доступно только для чтения. И теперь жизнь стала легче.
+// Все это замечательно, но в ES5 не было стандартизировано это поведение и не все браузеры и не всегда
+// выводили имена функций в стеке ошибок. Занимательно то, что в ES6 стандартизовали свойство Function.name,
+// которое доступно только для чтения и появилась возможность его выводить. И теперь жизнь стала легче.
+
+function fetchStudent(successCallback) {
+    // Какое значение будет у name функции successCallback?
+    fetch('/students').then(successCallback);
+}
+
+const menPredicate = student => student.gender === 'M'; // menPredicate
+const stateMapper = student => student.state.toUpperCase(); // stateMapper
+const states = students
+    .filter(menPredicate)
+    .map(stateMapper);
+
+/**
+ * Uncaught TypeError: Cannot read property 'toUpperCase' of undefined
+ *  at stateMapper (<anonymous>:59:46)
+ *  at Array.map (<anonymous>)
+ * at <anonymous>:62:6
+ */
+
+fetchStudent(function (students) {
+    // Я аннимная функция
+});
+
+// А как быть с ситуацией, когда у нас имеется функциональное выражение следующего вида?
+const foo = function bar(i) {
+    if (i < 10) return bar(i * 2);
+    return i;
+};
+
+// Помимо Function.name бывает еще лексическое имя. Когда оно возникает?
+// Как вы могли видеть ранее, оно возникает в случае организации рекурсии
+
 
 
