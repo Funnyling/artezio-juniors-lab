@@ -100,7 +100,7 @@ const states = students
  * Uncaught TypeError: Cannot read property 'toUpperCase' of undefined
  *  at stateMapper (<anonymous>:59:46)
  *  at Array.map (<anonymous>)
- * at <anonymous>:62:6
+ *  at <anonymous>:62:6
  */
 
 fetchStudent(function (students) {

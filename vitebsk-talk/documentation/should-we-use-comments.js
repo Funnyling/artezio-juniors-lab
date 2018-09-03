@@ -133,10 +133,17 @@ function isNaN(value) {
     return value !== value;
 }
 
-// Придумать пример, который можно написать вместе с ними, в котором будет @type и @typede, чтобы подсвечивали свойства
-// можно с a4a взять
+// А вот и пример с проекта, на котором необходимо было расширить уже написанное API и добавить туда плагин
+// отображающий пользователю, сколько осталось символов у в поле ввода. Элементы могут быть разными, в которых
+// должно отображаться оставшиеся количество символов.
 
-(function ($) {
+/**
+ * Register a plugin for our api Shub-Niggurath
+ *
+ * @param {Shub-Niggurath} api
+ * @return {void}
+ */
+(function (api) {
 
     /**
      * A set of default options, which will be used instead of
@@ -145,51 +152,52 @@ function isNaN(value) {
      * @const
      * @type MaxLengthTrackerOptions
      */
-    var defaultOptions = {
-        onLengthChanged: $.noop,
-        onInit: $.noop
+    const defaultOptions = {
+        onLengthChanged: api.noop,
+        onInit: api.noop
     };
 
     /**
-     * @param {MaxLengthTrackerOptions} options
-     * @return {jQuery} this jQuery object
+     * A function-plugin adds a handler for a group of event change, keyup, keypress
+     * to notify a user about the remaining length in the HTMLInputElement
+     *
+     * @this {HTMLElementWrapper} a wrapper around HTMLInputElement
+     * @param {MaxLengthTrackerOptions} options an object with custom option to properly set-up a plugin
+     * @return {HTMLElementWrapper} a wrapper input html element in which a text could be typed
      */
-    $.fn.maxLengthTracker = function (options) {
-        var settings = $.extend(defaultOptions, options);
-
+    function maxLengthTracker(options) {
+        const settings = Object.assign({}, defaultOptions, options);
         return this
-            .each(function () {
-                settings.onInit($(this));
-            })
-            .on('change keyup keypress', function () {
-                notifyLengthChanged($(this));
-            })
+            .each(settings.onInit)
+            .on('change keyup keypress', notifyLengthChanged)
             .trigger('change');
 
-        function notifyLengthChanged($inputEl) {
-            var currentLength = $inputEl.val().length;
-            var maxLength = parseInt($inputEl.attr('maxlength'));
+        function notifyLengthChanged(inputEl) {
+            const currentLength = inputEl.value.length;
+            const maxLength = parseInt(inputEl.getAttribute('maxlength'));
 
-            settings.onLengthChanged($inputEl, currentLength, maxLength);
+            settings.onLengthChanged(inputEl, currentLength, maxLength);
         }
-    };
+    }
 
+
+    api.plugins.maxLengthTracker = maxLengthTracker;
 
     /**
      * A callback fired before a lengthTracker is applied to the HtmlInputElement.
      *
      * @callback OnInitFunction
-     * @param {jQuery} $inputEl - A jQuery object of the HtmlInputElement with a lengthTracker applied.
+     * @param {HTMLInputElement} inputEl - a HtmlInputElement with a lengthTracker applied.
      */
 
     /**
      * A callback fired when an input length has been changed
      *
      * @callback OnLengthChangedFunction
-     * @param {jQuery} $inputEl - A jQuery object of the HtmlInputElement, that has fired
+     * @param {HTMLInputElement} inputEl the HtmlInputElement element, that has fired
      * one of the "change" events (change, keyup, keypress)
-     * @param {number} currentLength - Current length of the input value
-     * @param {number} maxLength - value of the input "maxlength" attribute
+     * @param {number} currentLength current length of the input value
+     * @param {number} maxLength value of the input "maxlength" attribute
      */
 
     /**
@@ -200,6 +208,28 @@ function isNaN(value) {
      * @property {OnLengthChangedFunction} onLengthChanged called when the length of the input has been changed
      *
      */
-})(jQuery);
+
+    /**
+     * @typedef {object} HTMLElementWrapper
+     * @property {HTMLElement} a html element
+     * @property {function} each
+     * @property {function} on
+     * @property {function} trigger method dispatches an passed event on the wrapped element
+     */
+})(window.ShubNiggurath);
 
 
+/**
+ * @type {Shub-Niggurath}
+ */
+window.ShubNiggurath = {};
+
+/**
+ * @typedef {object} Shub-Niggurath
+ * @property {Object.<string, ShubNiggurathPlugin>} plugins an object with all registered plugins.
+ * It is a simple dictionary, where all keys match to plugins' names and the values are plugin-functions
+ */
+
+/**
+ * @typedef {function} ShubNiggurathPlugin
+ */
