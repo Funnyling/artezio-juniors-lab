@@ -60,14 +60,15 @@ const states = students
     .filter(function (student) {
         return student.gender === 'M';
     })
-    .map(function (student) { // Ошибка выпадет здесь, у объекта нет свойства state
+    .map(function (student) {
+        // Ошибка выпадет здесь, у объекта может не быть свойства state
         return student.state.toUpperCase();
     });
 
 console.log(states);
 
 /**
- * VM116:64 Uncaught TypeError: Cannot read property 'toUpperCase' of undefined
+ * Uncaught TypeError: Cannot read property 'toUpperCase' of undefined
  *  at <anonymous>:64:30
  *  at Array.map (<anonymous>)
  *  at <anonymous>:63:6
@@ -80,15 +81,6 @@ console.log(states);
 // Опять вопрос к вам, знаете ли вы какие-нибудь способы как это сделать?
 
 // Варианты: задать имя, вынести в переменную, вынести в именованное функциональное объявление
-
-// Все это замечательно, но в ES5 не было стандартизировано это поведение и не все браузеры и не всегда
-// выводили имена функций в стеке ошибок. Занимательно то, что в ES6 стандартизовали свойство Function.name,
-// которое доступно только для чтения и появилась возможность его выводить. И теперь жизнь стала легче.
-
-function fetchStudent(successCallback) {
-    // Какое значение будет у name функции successCallback?
-    fetch('/students').then(successCallback);
-}
 
 const menPredicate = student => student.gender === 'M'; // menPredicate
 const stateMapper = student => student.state.toUpperCase(); // stateMapper
@@ -103,8 +95,18 @@ const states = students
  *  at <anonymous>:62:6
  */
 
+// Все это замечательно, но в ES5 не было стандартизировано это поведение и не все браузеры и не всегда
+// выводили имена функций в стеке ошибок. Занимательно то, что в ES6 стандартизовали свойство Function.name,
+// которое доступно только для чтения и появилась возможность его выводить. И теперь жизнь стала легче.
+
+function fetchStudent(successCallback) {
+    // Какое значение будет у свойства name функции successCallback?
+    console.log(successCallback.name);
+    fetch('/students').then(successCallback);
+}
+
 fetchStudent(function (students) {
-    // Я аннимная функция
+    // Я анонимная функция
 });
 
 // А как быть с ситуацией, когда у нас имеется функциональное выражение следующего вида?
