@@ -1,4 +1,4 @@
 /**
  * @author ntishkevich
  */
-var access = (age > 14) ? true : false;
+var weather = Math.random() > 0.3 ? "Сегодня хорошая погода" : "Сегодня ожидается дождь";

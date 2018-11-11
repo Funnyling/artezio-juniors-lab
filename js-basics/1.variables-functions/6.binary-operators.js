@@ -20,6 +20,14 @@ true == 1 // true, true становится числом 1
 false === 0 // false
 true === 1 // false
 
+null > 0
+null == 0
+null >= 0
+
+undefined > 0
+undefined == 0
+undefined >=0
+
 null == undefined
 
 +null // 0

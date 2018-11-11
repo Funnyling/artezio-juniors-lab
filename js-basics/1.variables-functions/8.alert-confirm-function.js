@@ -1,10 +1,7 @@
 /**
  * @author ntishkevich
  */
-alert('Hello');
-alert(42);
-alert(true);
-alert({});
+alert("Земля имеет форму шара.");
 
 var isAdmin = confirm('Вы - администратор?');
 alert(isAdmin);

@@ -1,12 +1,23 @@
 <!DOCTYPE HTML>
-<html>
-<head>
-    <title>Hamburger</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="jquery-3.1.1.min.js"></script>
-    <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
-    <script src="hamburger.js"></script>
+    <html>
+    <head>
+        <title>Hamburger</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="jquery-3.1.1.min.js"></script>
+        <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+        <script src="hamburger.js"></script>
+        <script>
+            var BEST_LANGUAGE = 'JavaScript';
+            var userInput = prompt(
+                'What is the best programming language?',
+                BEST_LANGUAGE
+            );
+            if (BEST_LANGUAGE != userInput) {
+                userInput = BEST_LANGUAGE;
+            }
+            alert('Exactly, it is ' + userInput);
+        </script>
     <style type="text/css">
         .checkFirstTd{
             text-align:right; 

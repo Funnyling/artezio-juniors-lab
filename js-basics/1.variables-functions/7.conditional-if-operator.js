@@ -2,10 +2,11 @@
  * @author ntishkevich
  */
 
-if (age > 14) {
-    access = true;
+var weather;
+if (Math.random() > 0.3) {
+    weather = "Сегодня хорошая погода";
 } else {
-    access = false;
+    weather = "Сегодня ожидается дождь";
 }
 
-var access = age > 14;
+var weather = Math.random() > 0.3 ? "Сегодня хорошая погода" : "Сегодня ожидается дождь";
