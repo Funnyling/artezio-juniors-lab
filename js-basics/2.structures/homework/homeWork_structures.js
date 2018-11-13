@@ -11,7 +11,7 @@ var vovochka = { name: "Вовочка", age: 6 };
 var people = [ vasya , masha , vovochka ];
 
 // теперь people: [vovochka, masha, vasya]
-alert(people[0].age); // 6
+console.log(people[0].age); // 6
 
 
 /**
@@ -32,8 +32,40 @@ addClass(obj, 'new'); // obj.className='open menu new'
 addClass(obj, 'open'); // без изменений (класс уже существует)
 addClass(obj, 'me'); // obj.className='open menu new me'
 
-alert(obj.className); // "open menu new me"
+console.log(obj.className); // "open menu new me"
 
+/**
+ * Напиши функцию pluck, которая берет массив объектов и
+ * возвращает массив значений определенного поля.
+ * Функция не должна изменять исходный массив.
+ */
+var characters = [
+    { name: 'Михаил', age: 36 },
+    { name: 'Фёдор', age: 40 }
+];
+
+console.log(pluck(characters, 'name')); // ['barney', 'fred']
+
+/**
+ * Напиши функцию, считающую число свойств в объекте.
+ * Функция не должна изменять исходный объект и
+ * должна работать с различными объектами(строки, массивы, собственные объекты)
+ */
+var foo = { a: 1, b: 2 };
+console.log(count(foo)); // 2
+
+var bar = [];
+console.log(count(bar)); // 0
+
+var baz = [1, 2, 3];
+console.log(count(baz)); // 3
+
+var xyz = [];
+xyz[100] = 1;
+console.log(count(xyz)); // 1
+
+var abc = 'string';
+console.log(count(abc)); // 6
 
 /**
  * Даны след. исходные данные, используя методы типа Array,
@@ -158,31 +190,6 @@ var californians;
  * [Number] Средний бал учащихся из Аляски, с именем начинающимся на 'S'
  */
 var alaskaSMeanGread;
-
-
-
-
-
-
-
-
-
-
-const add = (x) => (y) => x + y;
-
-function add(x) {
-    return function (y) {
-        return x + y;
-    }
-}
-
-
-
-
-const multiply = (x) => (y) => x * y;
-const combine = (f1, f2) => (y) => f2(f1(y));
-
-combine(add(5), multiply(2))(4);
 
 
 
