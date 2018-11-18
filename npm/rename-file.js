@@ -4,7 +4,7 @@ const util = require('util');
 const renameFile = (dir, lessons) => {
   fs.readdir(dir, (err, files) => {
     if (err) {
-      console.log(e);
+      console.log(err);
       return;
     }
 

@@ -1,7 +1,7 @@
 /**
  * @author ntishkevich
  */
-var february29 = new Date(2017, 1, 29);
+var february29 = new Date(2019, 1, 29);
 
 var today = new Date();
 today.setSeconds(today.getSeconds() + 3600);

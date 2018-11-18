@@ -2,8 +2,8 @@
  * @author ntishkevich
  */
 
-var htmlElement = {};
-var anotherHtmlElement = {};
+var htmlElement = ...;
+var anotherHtmlElement = ...;
 function calculateOffset(htmlElement) {
     // реализация расчета смещения
     return '150px';

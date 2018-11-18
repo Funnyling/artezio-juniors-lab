@@ -111,8 +111,8 @@ const tmp = [
     dir: 'd:/Downloads/Courses/Mastering TypeScript ToddMotto/'
   } */
   {
-    url: 'https://coursehunters.net/course/polnoe-rukovodstvo-razrabotchika-2018-ot-dzhunika-k-senoru',
-    dir: 'D:/video/Courses/The Complete Junior to Senior Web Developer Roadmap (2018)/'
+    url: 'https://coursehunters.net/course/master-klass-po-apache-kafka-i-rabbitmq',
+    dir: 'D:/video/Courses/Мастер-класс по Apache Kafka и RabbitMQ/'
   }
 ]
 
@@ -120,12 +120,10 @@ const main = () => {
   const newTmp = tmp.map(({url, dir}) => {
     console.info('Start loading ', dir);
     const promise = fetchLesson(url);
-    const result = {
-      dir,
-      promise
+      return {
+        dir,
+        promise
     };
-    
-    return result;
   });
 
   newTmp.forEach(({dir, promise}) => {
@@ -135,6 +133,6 @@ const main = () => {
       console.log('Error');
     });
   });
-}
+};
 
 main();
