@@ -8,12 +8,9 @@ function Animal(name, canFly) {
     this.name = name;
     this.canFly = canFly;
 }
-Animal.prototype.fly = function() {
-    if (this.canFly) {
-        console.log(this.name + ' может летать. ' + localMessage);
-    } else {
-        console.log(this.name + ' не может летать');
-    }
+Animal.prototype.fly = function () {
+    console.log(this.name + (this.canFly ? ' может летать.' : ' не может летать') + localMessage);
+
 };
 function MagicPony(name, magicSkill) {
     this.name = name;
@@ -23,12 +20,8 @@ function MagicPony(name, magicSkill) {
 
 MagicPony.prototype = Object.create(Animal.prototype);
 MagicPony.prototype.constructor = MagicPony;
-var twilightSparkle = new MagicPony('Сумеречная Искорка',
-    'Тяжёлое заклинание');
-console.log(
-    twilightSparkle.name,
-    twilightSparkle.magicSkill
-);
+var twilightSparkle = new MagicPony('Сумеречная Искорка', 'Тяжёлое заклинание');
+console.log(twilightSparkle.name, twilightSparkle.magicSkill);
 twilightSparkle.fly();
 
 // Call "inheritance"
@@ -37,11 +30,7 @@ function Animal(name, canFly) {
     this.name = name;
     this.canFly = canFly;
     this.fly = function () {
-        if (this.canFly) {
-            console.log(this.name + ' может летать. ' + localMessage);
-        } else {
-            console.log(this.name + ' не может летать');
-        }
+        console.log(this.name + (this.canFly ? ' может летать.' : ' не может летать') + localMessage);
     };
 }
 
@@ -50,11 +39,7 @@ function MagicPony(name, magicSkill) {
     this.magicSkill = magicSkill;
 }
 
-var twilightSparkle = new MagicPony('Сумеречная Искорка',
-    'Тяжёлое заклинание');
+var twilightSparkle = new MagicPony('Сумеречная Искорка', 'Тяжёлое заклинание');
 
-console.log(
-    twilightSparkle.name,
-    twilightSparkle.magicSkill
-);
+console.log(twilightSparkle.name, twilightSparkle.magicSkill);
 twilightSparkle.fly(); // Сумеречная Искорка может летать.

@@ -1,8 +1,8 @@
 /**
  * @author ntishkevich
  */
-var foo = {name: "foo", one: 1, two: 2};
-var bar = {two: "two", three: 3};
+var foo = {name: 'foo', one: 1, two: 2};
+var bar = {two: 'two', three: 3};
 
 bar.__proto__ = foo; // foo теперь является прототипом для bar
 
