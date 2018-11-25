@@ -1,10 +1,13 @@
 /**
  * @author ntishkevich
  */
-var cities = ['Минск', 'Брест', 'Гродно', 'Могилев'];
+var cities = ['Минск', 'Брест', 'Гродно', 'Могилев', 'Гомель'];
 
 cities.map(function (city) {
-    return city.toUpperCase();
+    return {
+        cityName: city,
+        nameLength: city.length
+    };
 });
 
 cities.forEach(function (city) {
@@ -17,4 +20,8 @@ cities.filter(function (city) {
 
 cities.some(function (city) {
     return city[0] === 'Г';
+});
+
+cities.every(function (city) {
+    return city.indexOf('а') < 0;
 });

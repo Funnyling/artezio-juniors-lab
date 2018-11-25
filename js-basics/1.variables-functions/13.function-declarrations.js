@@ -17,5 +17,11 @@ var factor = function factorial(number) {
     return number ? number * factorial(number - 1) : 1;
 };
 
+function () {
+    alert('Я анонимная функция');
+}
 
+sayDeclarition('Petya', function () {
+    alert('Петя приветствует нас');
+});
 

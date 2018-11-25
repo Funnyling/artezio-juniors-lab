@@ -9,19 +9,14 @@
  * 1.
  */
 function theBridgeOfHoistingDoom() {
-    var sword,
-        dwarf,
-        ring,
-        fall;
-
     function fellowship() {
         return "friends";
     }
-    sword = "sting";
-    dwarf = function() {
+    var sword = "sting";
+    var dwarf = function() {
         return "axe";
     };
-    fall = "Fly you fools!";
+    var fall = "Fly you fools!";
     fellowship = function() {
         return "broken";
     };

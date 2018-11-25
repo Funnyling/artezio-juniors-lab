@@ -11,3 +11,12 @@ function foo() {
 function bar() {
 
 }
+
+function foo() {
+    var number;
+    var n;
+    bar();
+    number = 42;
+    return number;
+    n = 15;
+}
