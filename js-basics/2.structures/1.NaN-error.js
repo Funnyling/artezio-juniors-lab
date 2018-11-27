@@ -2,22 +2,22 @@
  * @author ntishkevich
  */
 
-var htmlElement = ...;
-var anotherHtmlElement = ...;
-function calculateOffset(htmlElement) {
+
+function calculateOffset() {
     // реализация расчета смещения
     return '150px';
 }
 
-function horizontalMove(htmlElement, offset) {
-    // реализация перемещения на offset
+function verticalTransition(point, offset) {
+    // реализация перемещения на значение offset
     if (offset == NaN) {
         return;
     }
-    htmlElement.posX = htmlElement.posX + offset;
-}
 
-horizontalMove(
-    anotherHtmlElement,
-    calculateOffset(htmlElement)
-);
+    point.y = point.y + offset;
+    console.log(point);
+}
+var point = {x: 0, y: 0};
+var offset = +calculateOffset(); // получили значение `150px`
+
+verticalTransition(point, offset);

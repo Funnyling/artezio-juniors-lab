@@ -2,15 +2,12 @@
  * @author ntishkevich
  */
 
-var magicNumber = 0;
-
 function complexCalculation(firstNum, secondNum) {
-    return Math.pow(firstNum / magicNumber, 2) + Math.sin(secondNum);
+    // реализация сожной логики расчета
+    return Math.pow(firstNum / secondNum, 2) + Math.sin(secondNum);
 }
 
-var result = complexCalculation(-1231, 3981);
-var anotherResult;
+var result = complexCalculation(-1231, 0);
 if (result) {
-    anotherResult = magicNumber * result;
-    console.log(result);
+    alert('Ваш психологический возраст ' + result);
 }
