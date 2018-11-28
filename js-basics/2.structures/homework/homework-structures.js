@@ -44,7 +44,7 @@ var characters = [
     { name: 'Фёдор', age: 40 }
 ];
 
-console.log(pluck(characters, 'name')); // ['barney', 'fred']
+console.log(pluck(characters, 'name')); // ['Михаил', 'Фёдор']
 
 /**
  * Напиши функцию, считающую число свойств в объекте.

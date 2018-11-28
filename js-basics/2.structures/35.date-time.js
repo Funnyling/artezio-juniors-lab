@@ -19,3 +19,5 @@ yesterday = new Date(2017, 1, 18, 20, 15, 44);
 
 // Метод Date.now() возвращает дату сразу в виде миллисекунд.
 yesterday = Date.now();
+
+var millis = new Date().getTime();
