@@ -45,16 +45,51 @@ obj.getProp(); // ???
 
 obj.myMethod(); // ???
 
+var func = obj.myMethod;
+func();
+
 /**
  * 3.
  */
-obj.myMethod = function () {
-    // console.log(this);
-    setTimeout(function () {
-        console.log(this); // ???
-    }, 100);
+window.prop = 'Я - window';
+var obj = {
+    prop: 'Я - obj'
 };
-obj.myMethod();
+obj.myMethod = function () {
+    function getProp() {
+        console.log(this.prop);
+    }
+    getProp();
+};
+obj.myMethod(); // ???
+
+
+window.prop = 'Я - window';
+var obj = {
+    prop: 'Я - obj'
+};
+obj.myMethod = function () {
+    function getProp() {
+        console.log(this.prop);
+    }
+    getProp.call(this);
+};
+obj.myMethod(); // ???
+
+
+
+window.prop = 'Я - window';
+var obj = {
+    prop: 'Я - obj'
+};
+obj.myMethod = function () {
+    var that = this;
+    function getProp() {
+        console.log(that.prop);
+    }
+    getProp();
+};
+obj.myMethod(); // ???
 
 /**
  * 4.
@@ -167,62 +202,6 @@ obj.myMethod = function () {
 };
 obj.myMethod();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 (function () {
     function theBridgeOfHoistingDoom() {
         var sword = undefined;
@@ -244,3 +223,36 @@ obj.myMethod();
         return sword;
     }
 })();
+
+function mystery(phrase) {
+    // LexicalEnvironment {phrase: 'Привет', secretFunction: function}
+
+    function secretFunction(name) {
+        // LexicalEnvironment {name: 'Мир'}
+        // [[Scope]] -> LexicalEnvironment {phrase, secretFunction}
+        return phrase + ', ' + name;
+    }
+    return secretFunction;
+}
+
+var hidden = mystery('Привет');
+var result = hidden('Мир'); // Привет, Мир
+
+function mystery(phrase) {
+    // LexicalEnvironment {phrase, times, secretFunction}
+    var times = 0;
+    function secretFunction(name) {
+        // LexicalEnvironment {name: 'World'}
+        // [[Scope]] { phrase, times, secretFunction}
+        ++times;
+        return phrase + ', ' + name + '. Вызвана ' + times + ' раз/раза';
+    }
+    return secretFunction;
+}
+
+var hidden = mystery('Привет');
+var result = hidden('Мир'); // Привет, Мир. Вызвана 1 раз/раза
+result = hidden('Миша'); // Привет, Миша. Вызвана 2 раз/раза
+result = hidden('Катя'); // Привет, Катя. Вызвана 3 раз/раза
+result = hidden('Вася'); // Привет, Вася. Вызвана 4 раз/раза
+

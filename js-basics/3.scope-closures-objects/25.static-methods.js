@@ -18,6 +18,10 @@ var Color = (function () {
         }
     };
 
+    function convertToHex(bits) {
+        //...
+    }
+
     function Color(hexColor) {
         this.color = hexColor;
         this.hasLeadHash = hexColor[0] === '#';
@@ -59,16 +63,11 @@ var Color = (function () {
 
 console.log(Color.VERSION);
 
-var aquamarineColor =
-    new Color('#48d1cc');
+var aquamarineColor = new Color('#48d1cc');
 
-var whiteColor =
-    new Color('#ffffff');
+var whiteColor = Color.fromRgb(0, 0, 0);
 
-var newColor = Color.mixRgbColors(
-    aquamarineColor,
-    whiteColor
-);
+var newColor = Color.mixColors(aquamarineColor, whiteColor);
 
 console.log(newColor); // #a4e8e6
 
