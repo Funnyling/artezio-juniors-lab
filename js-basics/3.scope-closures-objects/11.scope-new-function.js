@@ -1,12 +1,13 @@
 /**
  * @author ntishkevich
  */
-window.message = 'Hello, Window';
+var message = 'Hello, Window';
 
 function getPrintFunction() {
     var message = 'Hello, Function';
-    return new Function('', 'console.log(message);');
+    var greet = new Function('', 'console.log(message);');
+    greet();
 }
 
-var printedMessage = getPrintFunction()();
+getPrintFunction();
 

@@ -8,17 +8,33 @@ function func() {
     this; // window
 }
 
-var timer = {startTime: 0};
-timer.start = function (end) {
-    while(this.startTime < end) {
-        this.startTime++;
-        // Объект timer
-        this;
+var felix = {
+    name: 'Felix',
+    meow: function () {
+        console.log(this.name + ' мяукает.'); // this -> felix
     }
-}
+};
 
 function Person(name, gender) {
     this.name = name;
-    this.gender = gender;
     this; // новый объект
 }
+
+button.onclick = function () {
+    this; // event.currentTarget
+};
+
+function Person(name) {
+    this.name = name;
+
+    this.getName = function () {
+        return this.name;
+    }
+}
+
+var foo = function (bar, baz) {
+    console.log(bar, baz);
+};
+
+var wrappedFoo = foo.bind(null, 'Зафиксировали');
+wrappedFoo(100);
