@@ -4,22 +4,12 @@
     <meta charset="utf8"/>
 </head>
 <body>
-<button id="orderButton">Пончики!</button>
 <script>
-    var orderButton = document.getElementById('orderButton'),
-            body = document.body,
-            i = 1;
-
-    orderButton.addEventListener('click', orderDonuts);
-
-    function orderDonuts() {
-        var image = document.createElement('img');
-        image.src = 'donut_' + i + '.png';
-        body.appendChild(image);
-        i++;
-        var text = document.createTextNode('Больше пончиков!');
-        body.appendChild(text);
-    }
+    var image = document.createElement('img');
+    image.src = 'images/donut.png';
+    var text = document.createTextNode('Больше пончиков!');
+    document.body.appendChild(image);
+    document.body.appendChild(text);
 </script>
 </body>
 </html>

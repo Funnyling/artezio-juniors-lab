@@ -6,21 +6,9 @@
 <body>
 <p>Симпсоны</p>
 <form class="family">
-    <input class="child rebel simpson" data-id="Барт"/>
+    <img class="simpson" src="images/bart.png" data-id="Барт"/>
     <img class="simpson" src="images/maggie.png" data-child-name="Мэгги"/>
 </form>
-<script>
-    var bartElem = document.querySelector('input.rebel');
-    var bart = bartElem.dataset.id;
-
-    bartElem.setAttribute('value', bart);
-
-    var maggieElem = document.querySelector('img.simpson');
-    var maggie = maggieElem.dataset.childName;
-    maggieElem.dataset.birthDate = '2007-07-09';
-
-    maggieElem.setAttribute('name', maggie);
-</script>
 </body>
 </html>
 

@@ -1,32 +1,19 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf8"/>
-    </head>
-    <body>
-    <button id="orderButton">Пончики!</button>
-    <script>
-        var orderButton = document.getElementById('orderButton'),
-                body = document.body;
-
-        orderButton.onclick = orderDonuts;
-
-        var beerButton = document.createElement('button');
-        beerButton.textContent = 'Закажем Duff';
-        beerButton.onclick = orderDonuts;
-
-        function orderDonuts() {
-            if (body.contains(orderButton)) {
-                body.replaceChild(beerButton, orderButton);
-            }
-            var beer = document.createElement('img');
-            beer.src = 'Duff_2.png';
-            body.appendChild(beer);
-            var text = document.createTextNode('Больше Duff!');
-            body.appendChild(text);
-        }
-    </script>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf8"/>
+</head>
+<body>
+<img src="images/donut.png">
+Больше пончиков!
+<script>
+    var donut = document.body.firstElementChild;
+    if (donut.hasAttribute('alt')) {
+        donut.setAttribute('alt', 'Пончик');
+    }
+    donut.setAttribute('src', 'images/donut_2.png');
+</script>
+</body>
+</html>
 
 

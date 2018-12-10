@@ -7,18 +7,16 @@
 <p>Симпсоны</p>
 <form class="family">
     <input class="child simpson" value="Барт"/>
-    <label class="jazz child simpson">
+    <p class="jazz child simpson">
         <span class="housewife simpson">Мардж</span>
         Лиза
-    </label>
+    </p>
 </form>
 <footer class="sofa">Диван</footer>
 <script>
     var lisa = document.querySelector('span.child');
     var lisaLovesJazz = lisa.matches('.jazz');
-    console.log(lisaLovesJazz);
     var marge = lisa.closest('.mother');
-    console.log(marge);
 </script>
 </body>
 </html>

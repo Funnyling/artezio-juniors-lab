@@ -8,5 +8,20 @@
     <input type='text' placeholder='Пиво'/>
     <button>Проверить</button>
 </form>
+<script>
+    function count (node) {
+        var nodeCount = 0;
+        for (var i = 0; i < node.childNodes.length; i++) {
+            var subNode = document.childNodes[i];
+            if (subNode.childNodes.length > 0) {
+                nodeCount += subNode.childNodes.length;
+            } else {
+                nodeCount++;
+            }
+        }
+        return nodeCount;
+    }
+    var b = count(document);
+</script>
 </body>
 </html>
