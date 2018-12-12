@@ -15,13 +15,14 @@ const renameFile = (dir, lessons) => {
       if (!filePath.includes('lesson')) {
         return;
       }
+
       const number = fileName.split('lesson')[1];
       let { name } = lessons[number];
       if (name.includes(':')) {
-        name = name.replace(/\:/g, ' - ');
+        name = name.replace(/:/g, ' - ');
       }
       if (name.includes('"')) {
-        name = name.replace(/\"/g, ' ');
+        name = name.replace(/"/g, ' ');
       }
       if (name.includes('?')) {
         name = name.replace('?', '');
@@ -45,16 +46,16 @@ const renameFile = (dir, lessons) => {
         name = name.replace('plus\\minus', 'plus or minus');
       }
       if (name.includes('&')) {
-        name = name.replace(/\&/g, '');
+        name = name.replace(/&/g, '');
       }
       if (name.includes('$')) {
         name = name.replace(/\$/g, '');
       }
       if (name.includes('#')) {
-        name = name.replace(/\#/g, '');
+        name = name.replace(/#/g, '');
       }
       if (name.includes('!')) {
-        name = name.replace(/\!/g, '');
+        name = name.replace(/!/g, '');
       }
       if (name.includes('*')) {
         name = name.replace(/\*/g, '');
@@ -65,8 +66,12 @@ const renameFile = (dir, lessons) => {
       if (name.includes(number)) {
         name = name.replace(number, '');
       }
+      if (name.includes('`')) {
+        name = name.replace(/`/g, '');
+      }
+
       const newPath = `${dir}${number}${name}.${extension}`;
-      fs.rename(`${dir}${filePath}`, newPath);
+      fs.rename(`${dir}${filePath}`, newPath, () => {});
     });
   });
 };

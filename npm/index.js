@@ -2,7 +2,7 @@ const fetchLesson = require('./fetch-lesson');
 const renameFile = require('./rename-file');
 
 const tmp = [  
-  /* {
+  /*{
     url: 'https://coursehunters.net/course/osnovy-vue-js-s-vuex-i-vue-router',
     dir: 'd:/Downloads/Courses/VueJs Vuex Vue Router/'
   },
@@ -101,20 +101,20 @@ const tmp = [
   {
     url: 'https://coursehunters.net/course/webpack-transpiling-i-bandling-javascript',
     dir: 'd:/Downloads/Courses/Webpack Transpiling and Bundling JavaScript/'
+  },*/
+  {
+    url: 'https://coursehunters.net/course/sozdayte-slack-chat-s-pomoshchyu-react-redux-i-firebase',
+    dir: 'd:/video/Courses/Slack, React, Redux/'
   },
   {
-    url: 'https://coursehunters.net/course/rukovodstvo-po-sketch',
-    dir: 'd:/Downloads/Courses/Руководство по Sketch/'
-  },
+    url: 'https://coursehunters.net/course/kurs-po-react-js-nabor-2018',
+    dir: 'd:/video/Courses/[learnjavasctiptru] Курс по React.JS 09.2018/'
+  /*},
   {
-    url: 'https://coursehunters.net/course/typescript-masterclass-todd-motto',
-    dir: 'd:/Downloads/Courses/Mastering TypeScript ToddMotto/'
-  } */
-  {
-    url: 'https://coursehunters.net/course/master-klass-po-apache-kafka-i-rabbitmq',
-    dir: 'D:/video/Courses/Мастер-класс по Apache Kafka и RabbitMQ/'
+    url: 'https://coursehunters.net/course/react-testirovanie-s-jest-i-enzyme',
+    dir: 'D:/video/Courses/React тестирование с Jest и Enzyme/'*/
   }
-]
+];
 
 const main = () => {
   const newTmp = tmp.map(({url, dir}) => {
