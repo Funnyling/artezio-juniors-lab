@@ -5,41 +5,35 @@
 </head>
 <body>
     <form name="myForm" onsubmit="onSubmit()">
-        <label>
-            Первый: Enter в текстовом поле
-            <input name="textInput" type="text" value="Текст">
-            <br>
-        </label>
-        <label>
-            Второй: Нажать на "Отправить":
-            <input name="sumbitInput" type="submit" value="Отправить">
-            <br>
-        </label>
-        <label>
-            Третий: Вызвать метод у формы:
-            <button id="submitBtn">Отправить</button>
-            <br>
-        </label>
+        <div>
+            <label>
+                Первый: Enter в текстовом поле
+                <input name="textInput" type="text" value="Текст">
+            </label>
+        </div>
+        <div>
+            <label>
+                Второй: Нажать на "Отправить":
+                <input name="sumbitInput" type="submit" value="Отправить">
+            </label>
+        </div>
+        <div>
+            <label>
+                Третий: Вызвать метод у формы:
+                <button id="submitBtn">Отправить</button>
+            </label>
+        </div>
 
     </form>
     <script>
         var submitBtn = document.getElementById('submitBtn');
-        var myForm = document.forms.myForm;
-        myForm = document.forms[0];
+        var myForm = document.forms['myForm']; // forms[0]
 
-        var textInput = myForm.elements.textInput,
-            submitInput = myForm.elements[1];
-
-        console.log(textInput);
-        console.log(submitInput);
-
-        submitBtn.onclick = function () {
-            myForm.submit();
-            return onSubmit();
-        };
+        submitBtn.onclick = onSubmit;
 
         function onSubmit () {
-            alert('Данные отправлены!');
+            myForm.submit();
+            console.log('Данные отправлены!');
             return false;
         }
     </script>

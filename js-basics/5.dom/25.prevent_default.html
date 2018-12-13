@@ -18,19 +18,18 @@
         var mozillaHref = document.getElementById('mdnHref');
         var goodStuffHref = document.getElementById('goodStuffHref');
 
-        href.onclick = function (event) {
-            event.stopImmediatePropagation()
-            alert('Не перейдем по ссылки Пончики');
+        href.onclick = function () {
+            console.log('Не перейдем по ссылки Пончики');
             return false;
         };
 
         mozillaHref.addEventListener('click', function (event) {
-            alert('Не перейдем по ссылки Mozilla');
+            console.log('Не перейдем по ссылки Mozilla');
             event.preventDefault();
         });
 
         goodStuffHref.onclick = function () {
-            alert('Посмотрим на хорошие практики');
+            console.log('Посмотрим на хорошие практики');
         };
 
     </script>

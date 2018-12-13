@@ -4,32 +4,15 @@
     <meta charset="utf8"/>
 </head>
 <body>
-<button id="orderButton">Пончики!</button>
-
-<img class="donut" src="images/donut_1.png" style="display: none;"/>
-<img class="donut" src="images/donut_2.png" style="display: none;"/>
-<img class="donut" src="images/donut_3.png" style="display: none;"/>
-<img class="beer" src="images/Duff_2.png" style="display: none;"/>
-<img class="beer" src="images/Duff_2.png" style="display: none;"/>
-<img class="beer" src="images/Duff_2.png" style="display: none;"/>
+    <button id="orderButton">Пончики!</button>
 <script>
     var orderButton = document.getElementById('orderButton');
-    orderButton.addEventListener('click', orderDonuts);
-    orderButton.addEventListener('click', orderBeer);
+    orderButton.addEventListener('click', myHandler);
 
-    function orderDonuts(event) {
-        var images = document.querySelectorAll('img.donut');
-        for (var i = 0; i < images.length; i++) {
-            images[i].style.display = 'block';
-        }
-    }
-
-    function orderBeer(event) {
-        var images = document.querySelectorAll('img.beer');
-        for (var i = 0; i < images.length; i++) {
-            images[i].style.display = 'block';
-        }
-        console.log('Заказываем пиво');
+    function myHandler() {
+        var img = document.createElement('img');
+        img.src = 'images/donut_1.png';
+        document.body.appendChild(img);
     }
 </script>
 </body>

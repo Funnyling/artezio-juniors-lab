@@ -1,30 +1,29 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf8"/>
-    </head>
-    <body>
-    <button id="orderButton">Пончики!</button>
-    <script>
-        var orderButton = document.getElementById('orderButton'),
-                body = document.body,
-                i = 1;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf8"/>
+</head>
+<body>
+<button id="orderButton">Пончики!</button>
+<script>
+    var orderButton = document.getElementById('orderButton');
+    var i = 1;
 
-        orderButton.addEventListener('click', orderDonuts);
+    orderButton.addEventListener('click', myHandler);
 
-        function orderDonuts() {
-            if (i > 3) {
-                orderButton.removeEventListener('click', orderDonuts);
-                return;
-            }
-
-            var image = document.createElement('img');
-            image.src = 'images/donut.png';
-            body.appendChild(image);
-            i++;
+    function myHandler() {
+        if (i < 3) {
+            orderButton.removeEventListener('click', myHandler);
+            return;
         }
-    </script>
-    </body>
-    </html>
+
+        var img = document.createElement('img');
+        img.src = 'images/donut_1.png';
+        document.body.appendChild(img);
+        i++;
+    }
+</script>
+</body>
+</html>
 
 
