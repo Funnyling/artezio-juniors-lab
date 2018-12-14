@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event-delegation</title>
+    <style>
+        .highlight {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<table id="myTable">
+    <tr>
+        <td class="nw">...</td>
+        <td class="n">...</td>
+    </tr>
+    <tr>
+        <td class="w">...</td>
+        <td class="c">...</td>
+    </tr>
+    <!--<tr>
+        ...
+    </tr>-->
+
+</table>
+<script>
+    var table = document.getElementById('myTable');
+    var selectedTd;
+
+    table.addEventListener('click', clickHandler, false);
+
+    function clickHandler(event) {
+        var target = event.target;
+        while (target !== this) {
+            if (target.tagName === 'TD') {
+                highlight(target);
+                return;
+            }
+            target = target.parentNode;
+        }
+    }
+
+    function highlight(node) {
+        // Меняем цвет ячейки, на которую нажали, на красный
+        // При нажатию на другую, выделение снимается и выделяется другая
+        if (selectedTd) {
+            selectedTd.classList.remove('highlight');
+        }
+        selectedTd = node;
+        selectedTd.classList.add('highlight');
+    }
+</script>
+<!--https://jsbin.com/namoboy/2/edit?html,css,output-->
+</body>
+</html>

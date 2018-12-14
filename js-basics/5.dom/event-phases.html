@@ -56,8 +56,8 @@
     var elems = document.querySelectorAll('form, div, p');
 
     for (var i = 0; i < elems.length; i++) {
-        // elems[i].addEventListener('click', highlightThis, true);
-        elems[i].addEventListener('click', highlightThis, false);
+        elems[i].addEventListener('click', highlightThis, true);
+        // elems[i].addEventListener('click', highlightThis, false);
     }
 
     function highlightThis(event) {
@@ -65,6 +65,7 @@
         // this -> event.currentTarget;
     }
 </script>
+<!--https://jsbin.com/secafuw/9/edit-->
 </body>
 
 </html>
